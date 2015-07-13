@@ -17,13 +17,13 @@ import net.thucydides.core.pages.PageObject;
 public class DictionaryPage extends PageObject {
 
     @FindBy(name="search")
-    private WebElementFacade searchTerms;
+    private WebElementFacade searchTermsS;
 
     @FindBy(name="go")
     private WebElementFacade lookupButton;
 
     public void enter_keywords(String keyword) {
-        searchTerms.type(keyword);
+        searchTermsS.type(keyword);
     }
 
     public void lookup_terms() {
