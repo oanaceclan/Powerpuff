@@ -2,7 +2,6 @@ package com.steps;
 
 import org.junit.Assert;
 
-import com.pages.NewVacationRequestHomePage;
 import com.pages.NewVacationRequestPage;
 
 import net.thucydides.core.annotations.Step;
@@ -12,7 +11,7 @@ import net.thucydides.core.steps.ScenarioSteps;
 public class NewVacationRequestSteps extends ScenarioSteps {
 
 	NewVacationRequestPage newVacationReqPage;
-	NewVacationRequestHomePage newVacReqHomepage;
+	
 
 	
 	@Step
@@ -29,11 +28,11 @@ public class NewVacationRequestSteps extends ScenarioSteps {
 
 	@Step
 	public void checkVacationButtonIsPressed() {
-		Assert.assertTrue("Vacation days left is not present", newVacReqHomepage.isRequestButtonPresent());
+		Assert.assertTrue("Vacation days left is not present", newVacationReqPage.isRequestButtonPresent());
 	}
 	
 	@Step
 	public void checkVacDaysLeft() {
-		Assert.assertTrue("New request button is not present", newVacReqHomepage.isVacDaysLeftPresent());
+		Assert.assertTrue("New request button is not present", newVacationReqPage.isVacDaysLeftPresent());
 	}
 }

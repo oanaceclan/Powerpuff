@@ -4,11 +4,6 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
 import org.junit.Assert;
-
-import com.pages.InboxHomePage;
-import com.pages.InboxPage;
-import com.pages.NewVacationRequestHomePage;
-import com.pages.NewVacationRequestPage;
 import com.pages.ViewVacationPage;
 
 @SuppressWarnings("serial")

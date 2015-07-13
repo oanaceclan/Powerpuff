@@ -7,14 +7,12 @@ import org.junit.Assert;
 
 import com.pages.InboxHomePage;
 import com.pages.InboxPage;
-import com.pages.NewVacationRequestHomePage;
 import com.pages.NewVacationRequestPage;
 
 @SuppressWarnings("serial")
 public class InboxSteps extends ScenarioSteps {
 
 	NewVacationRequestPage vacationPage;
-	NewVacationRequestHomePage vachomepage;
 	InboxPage inboxPage;
 	InboxHomePage inboxhomepage;
 
@@ -29,11 +27,6 @@ public class InboxSteps extends ScenarioSteps {
 	}
 	
 
-	@Step
-	public void checkVacationButtonIsPressed() {
-		Assert.assertTrue("Vacation days left is not present", vachomepage.isRequestButtonPresent());
-	}
-	
 	@Step
 	public void checkInboxButton() {
 		Assert.assertTrue("Inbox button is not present", inboxhomepage.isInboxButtonPresent());
