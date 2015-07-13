@@ -25,6 +25,9 @@ public class InboxTest {
 
     @Steps
     public InboxSteps inboxSteps;
+    
+    @Steps
+    public LoginSteps loginSteps;
 
     @Test
 	public void checkVacationButton() {

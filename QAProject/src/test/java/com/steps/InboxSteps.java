@@ -19,35 +19,9 @@ public class InboxSteps extends ScenarioSteps {
 	InboxPage inboxPage;
 	InboxHomePage inboxhomepage;
 
-	@Step
-	public void openLoginPage() {
-		vacationPage.getDriver().close();
-		vacationPage.open();
-		vacationPage.getDriver().manage().window().maximize();
-	}
+	
 
-	@Step
-	public void enterUsername(String keyword) {
-		vacationPage.enter_username(keyword);
-	}
-
-	@Step
-	public void enterPassword(String keyword) {
-		vacationPage.enter_password(keyword);
-	}
-
-	@Step
-	public void startSearch() {
-		vacationPage.sign_in();
-	}
-
-	@StepGroup
-	public void loginWith(String username, String password) {
-		openLoginPage();
-		enterUsername(username);
-		enterPassword(password);
-		startSearch();
-	}
+	
 
 	@Step
 	public void startVacationbtn() {

@@ -23,11 +23,4 @@ public class InboxHomePage extends PageObject {
 	}
 	
 	
-	//@FindBy (id="vacDaysLeft")
-	//private WebElementFacade vacDaysLeft;
-	
-	//public boolean isVacDaysLeftPresent() {
-		//return vacDaysLeft.isPresent();
-	//}
-
 }
