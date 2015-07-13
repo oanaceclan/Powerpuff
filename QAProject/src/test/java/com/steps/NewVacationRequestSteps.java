@@ -2,18 +2,18 @@ package com.steps;
 
 import org.junit.Assert;
 
-import com.pages.VacationHomePage;
-import com.pages.VacationPage;
+import com.pages.NewVacationRequestHomePage;
+import com.pages.NewVacationRequestPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class VacationSteps extends ScenarioSteps {
+public class NewVacationRequestSteps extends ScenarioSteps {
 
-	VacationPage vacationPage;
-	VacationHomePage vachomepage;
+	NewVacationRequestPage vacationPage;
+	NewVacationRequestHomePage vachomepage;
 
 	@Step
 	public void openLoginPage() {

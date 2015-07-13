@@ -5,7 +5,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 
 //@DefaultUrl("http://en.wiktionary.org/wiki/Wiktionary:Main_Page")
-public class VacationPage extends PageObject {
+public class NewVacationRequestPage extends PageObject {
 	
 	
 	@FindBy (css="[href='http://172.22.4.88:9091/vacation']")

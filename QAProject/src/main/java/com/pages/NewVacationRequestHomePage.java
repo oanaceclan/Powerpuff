@@ -5,7 +5,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 
 //@DefaultUrl("http://172.22.4.88:9091/login")
-public class VacationHomePage extends PageObject {
+public class NewVacationRequestHomePage extends PageObject {
 
 	
 	@FindBy (css="[href*='menuItem=new-request']")

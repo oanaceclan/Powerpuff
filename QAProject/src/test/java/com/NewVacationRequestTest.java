@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.steps.VacationSteps;
+import com.steps.NewVacationRequestSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -13,7 +13,7 @@ import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
 
 @RunWith(SerenityRunner.class)
-public class VacationTest {
+public class NewVacationRequestTest {
 
     @Managed(uniqueSession = true)
     public WebDriver webdriver;
@@ -22,7 +22,7 @@ public class VacationTest {
     public Pages pages;
 
     @Steps
-    public VacationSteps vacationSteps;
+    public NewVacationRequestSteps vacationSteps;
 
     @Test
 	public void checkVacationButton() {
