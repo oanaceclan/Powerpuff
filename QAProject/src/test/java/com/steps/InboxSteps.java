@@ -1,15 +1,14 @@
 package com.steps;
 
+import net.thucydides.core.annotations.Step;
+import net.thucydides.core.steps.ScenarioSteps;
+
 import org.junit.Assert;
 
 import com.pages.InboxHomePage;
 import com.pages.InboxPage;
 import com.pages.NewVacationRequestHomePage;
 import com.pages.NewVacationRequestPage;
-
-import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.StepGroup;
-import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
 public class InboxSteps extends ScenarioSteps {
@@ -18,10 +17,6 @@ public class InboxSteps extends ScenarioSteps {
 	NewVacationRequestHomePage vachomepage;
 	InboxPage inboxPage;
 	InboxHomePage inboxhomepage;
-
-	
-
-	
 
 	@Step
 	public void startVacationbtn() {
@@ -32,7 +27,6 @@ public class InboxSteps extends ScenarioSteps {
 	public void inboxbtn() {
 		inboxPage.inbox_button();
 	}
-	
 	
 
 	@Step

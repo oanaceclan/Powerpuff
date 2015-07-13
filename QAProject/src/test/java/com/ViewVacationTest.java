@@ -8,6 +8,7 @@ import tools.Constants;
 
 import com.steps.InboxSteps;
 import com.steps.LoginSteps;
+import com.steps.ViewVacationSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -16,7 +17,7 @@ import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
 
 @RunWith(SerenityRunner.class)
-public class InboxTest {
+public class ViewVacationTest {
 
     @Managed(uniqueSession = true)
     public WebDriver webdriver;
@@ -24,6 +25,9 @@ public class InboxTest {
     @ManagedPages(defaultUrl = Constants.EvoPortal)
     public Pages pages;
 
+    @Steps
+    public ViewVacationSteps viewvacationSteps;
+    
     @Steps
     public InboxSteps inboxSteps;
     
@@ -37,7 +41,7 @@ public class InboxTest {
     	loginSteps.enterPassword("test1");
     	loginSteps.startSearch();
     	inboxSteps.startVacationbtn();
-    	inboxSteps.inboxbtn();
-    	inboxSteps.checkInboxButtonIsPressed();
+    	viewvacationSteps.viewvacationbtn();
+    	viewvacationSteps.applyButton();
 	}
 }

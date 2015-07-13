@@ -14,10 +14,6 @@ public class InboxPage extends PageObject {
 	@FindBy (css="[href*='menuItem=inbox']")
 	private WebElementFacade inboxButton;
 	
-
-   
-   
-	
 	public void vacation_button() {
 		vacationbtn.click();
 	}
