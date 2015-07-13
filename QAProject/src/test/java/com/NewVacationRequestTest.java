@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import com.steps.LoginSteps;
 import com.steps.NewVacationRequestSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -21,18 +22,22 @@ public class NewVacationRequestTest {
     @ManagedPages(defaultUrl = "http://172.22.4.88:9091/login")
     public Pages pages;
 
+
+    @Steps
+    public LoginSteps loginSteps;
+    
     @Steps
     public NewVacationRequestSteps vacationSteps;
 
-    @Test
+    //@Test
 	public void checkVacationButton() {
-    	vacationSteps.openLoginPage();
-    	vacationSteps.enterUsername("Oana");
-    	vacationSteps.enterPassword("test");
-    	vacationSteps.startSearch();
+		loginSteps.openLoginPage();
+		loginSteps.enterUsername("Oana");
+		loginSteps.enterPassword("test");
+		loginSteps.startSearch();
     	vacationSteps.startVacationbtn();
     	vacationSteps.newRequestbtn();
-    	vacationSteps.vacationWithoutPaymenyBtn();
+    	
     	//vacationSteps.checkVacDaysLeft();
     	//vacationSteps.checkVacationButtonIs();
 	}
