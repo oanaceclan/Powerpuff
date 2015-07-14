@@ -31,7 +31,6 @@ public class MyRequestsTest {
 	    
 	    @Steps
 	    public LoginSteps loginSteps;
-	    
 
 	    @Test
 		public void myRequestsFilter() {
