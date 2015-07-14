@@ -14,11 +14,19 @@ public class ViewVacationPage extends PageObject {
 	@FindBy (id="_evovacation_WAR_EvoVacationportlet_applyButton")
 	private WebElementFacade applyButton;
 	
+	
 	public void view_vacation_button(){
 		viewVacationButton.click();
 	}
 	
-	public boolean applyButton() {
+	public void applyButton() {
+		applyButton.waitUntilVisible();
+		applyButton.click();
+	}
+	
+	public boolean isApplyButtonPresent() {
 		return applyButton.isPresent();
 	}
+
+	
 }

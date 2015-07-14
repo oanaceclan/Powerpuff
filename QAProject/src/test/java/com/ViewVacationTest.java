@@ -37,11 +37,11 @@ public class ViewVacationTest {
     @Test
 	public void checkVacationButton() {
     	loginSteps.openLoginPage();
-    	loginSteps.enterUsername("Roxana");
-    	loginSteps.enterPassword("test1");
+    	loginSteps.enterUsername(Constants.DMUserName);
+    	loginSteps.enterPassword(Constants.DMPassWord);
     	loginSteps.startSearch();
     	inboxSteps.startVacationbtn();
     	viewvacationSteps.viewvacationbtn();
-    	viewvacationSteps.applyButton();
+    	viewvacationSteps.ApplyButton();
 	}
 }

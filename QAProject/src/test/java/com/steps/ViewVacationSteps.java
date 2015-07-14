@@ -1,9 +1,12 @@
 package com.steps;
 
+import org.junit.Assert;
+
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-import org.junit.Assert;
+
+//import org.junit.Assert;
 import com.pages.ViewVacationPage;
 
 @SuppressWarnings("serial")
@@ -15,12 +18,11 @@ public class ViewVacationSteps extends ScenarioSteps {
 	public void viewvacationbtn() {
 		viewvacationPage.view_vacation_button();
 	}
-	
 
 	@Step
-	public void applyButton() {
-		Assert.assertTrue("Vacation days left is not present", viewvacationPage.applyButton());
+	public void ApplyButton() {
+		Assert.assertTrue("View Vacation button is not present", viewvacationPage.isApplyButtonPresent());
 	}
-	
-	
 }
+	
+	
