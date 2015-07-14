@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.steps.LoginSteps;
+import com.steps.MyFreeDaysSteps;
 import com.steps.NewVacationRequestSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -14,7 +15,7 @@ import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
 
 @RunWith(SerenityRunner.class)
-public class NewVacationRequestTest {
+public class MyFreeDaysTest {
 
     @Managed(uniqueSession = true)
     public WebDriver webdriver;
@@ -28,16 +29,20 @@ public class NewVacationRequestTest {
     
     @Steps
     public NewVacationRequestSteps vacationSteps;
+    
+
+    @Steps
+    public MyFreeDaysSteps myFreeDaysSteps;
 
     @Test
-	public void checkVacationButton() {
+	public void checkButton() {
 		loginSteps.openLoginPage();
 		loginSteps.enterUsername("Oana");
 		loginSteps.enterPassword("test");
 		loginSteps.startSearch();
     	vacationSteps.startVacationbtn();
-    	vacationSteps.newRequestbtn();
-    	vacationSteps.checkVacDaysLeft();
+    	myFreeDaysSteps.myFreeDaysbtn();
+    	myFreeDaysSteps.checkBackBtnIsPresent();
     	
 	}
 }

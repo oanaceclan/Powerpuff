@@ -8,7 +8,7 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class NewVacationRequestSteps extends ScenarioSteps {
+public class HolidayRequestSteps extends ScenarioSteps {
 
 	NewVacationRequestPage newVacationReqPage;
 	
@@ -23,7 +23,13 @@ public class NewVacationRequestSteps extends ScenarioSteps {
 	public void newRequestbtn() {
 		newVacationReqPage.new_request_button();
 	}
+	
+	
 
+	@Step
+	public void checkVacationButtonIsPressed() {
+		Assert.assertTrue("Vacation days left is not present", newVacationReqPage.isRequestButtonPresent());
+	}
 	
 	@Step
 	public void checkVacDaysLeft() {

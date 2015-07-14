@@ -31,9 +31,9 @@ public class MyRequestsTest {
 	    
 	    @Steps
 	    public LoginSteps loginSteps;
-	    
+
 	    @Test
-		public void checkVacationButton() {
+		public void myRequestsFilter() {
 	    	loginSteps.openLoginPage();
 	    	loginSteps.enterUsername("Oana");
 	    	loginSteps.enterPassword("test");
@@ -46,24 +46,5 @@ public class MyRequestsTest {
 	    	myReqSteps.applyButton();
 	    	
 	    	
-	    	
-	    	//vacationSteps.newRequestbtn();
-	    	//datePickerSteps.datePickerSelect();
-	    	//vacationSteps.vacationWithoutPaymenyBtn();
-	    	//vacationSteps.checkVacDaysLeft();
-	    	//vacationSteps.checkVacationButtonIs();
 		}
-	
-	/*    @Test
-		public void jQueryCalendarExample() {
-			driver.navigate().to(jQueryURL);
-			WebElement frameElement=driver.findElement(frameLocator);
-			driver.switchTo().frame(frameElement);
-			wait.until(ExpectedConditions.presenceOfElementLocated(tagText));
-			driver.findElement(tagText).click();
-			selectJQueryDate("21");
-		}
-		
-	
-		}*/
 }

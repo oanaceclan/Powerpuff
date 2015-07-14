@@ -1,6 +1,5 @@
 package com;
 
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
@@ -14,7 +13,7 @@ import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
 
 @RunWith(SerenityRunner.class)
-public class NewVacationRequestTest {
+public class HolidayRequestTest {
 
     @Managed(uniqueSession = true)
     public WebDriver webdriver;
@@ -29,7 +28,7 @@ public class NewVacationRequestTest {
     @Steps
     public NewVacationRequestSteps vacationSteps;
 
-    @Test
+    //@Test
 	public void checkVacationButton() {
 		loginSteps.openLoginPage();
 		loginSteps.enterUsername("Oana");
@@ -37,7 +36,8 @@ public class NewVacationRequestTest {
 		loginSteps.startSearch();
     	vacationSteps.startVacationbtn();
     	vacationSteps.newRequestbtn();
-    	vacationSteps.checkVacDaysLeft();
     	
+    	//vacationSteps.checkVacDaysLeft();
+    	//vacationSteps.checkVacationButtonIs();
 	}
 }
