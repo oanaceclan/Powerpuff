@@ -1,20 +1,24 @@
 package com;
 
+import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
+import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.ManagedPages;
+import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.pages.Pages;
+import net.thucydides.junit.annotations.UseTestDataFrom;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.steps.LoginSteps;
 
-import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.ManagedPages;
-import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.pages.Pages;
-
-@RunWith(SerenityRunner.class)
+@RunWith(SerenityParameterizedRunner.class)
+@UseTestDataFrom("/Resources/data.csv")
 public class LoginTest {
-
+	
+	String username, password;
+	
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -27,13 +31,13 @@ public class LoginTest {
 	@Test
 	public void loginWithValidCredentials() {
 		loginSteps.openLoginPage();
-		loginSteps.enterUsername("Oana");
-		loginSteps.enterPassword("test");
+		loginSteps.enterUsername(username);
+		loginSteps.enterPassword(password);
 		loginSteps.startSearch();
 		loginSteps.checkLoginIsPerformed();
 	}
 
-	@Test
+	//@Test
 	public void loginWithInvalidCredentials() {
 		/*loginSteps.openLoginPage();
 		loginSteps.enterUsername("Oana");
