@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.steps.DatePickerSteps;
 import com.steps.LoginSteps;
 import com.steps.MyRequestsSteps;
 import com.steps.NewVacationRequestSteps;
@@ -33,11 +32,9 @@ public class MyRequestsTest {
 	    @Steps
 	    public LoginSteps loginSteps;
 	    
-	    @Steps
-	    public DatePickerSteps datePickerSteps;
 
 	    @Test
-		public void checkVacationButton() {
+		public void myRequestsFilter() {
 	    	loginSteps.openLoginPage();
 	    	loginSteps.enterUsername("Oana");
 	    	loginSteps.enterPassword("test");
@@ -50,24 +47,5 @@ public class MyRequestsTest {
 	    	myReqSteps.applyButton();
 	    	
 	    	
-	    	
-	    	//vacationSteps.newRequestbtn();
-	    	//datePickerSteps.datePickerSelect();
-	    	//vacationSteps.vacationWithoutPaymenyBtn();
-	    	//vacationSteps.checkVacDaysLeft();
-	    	//vacationSteps.checkVacationButtonIs();
 		}
-	
-	/*    @Test
-		public void jQueryCalendarExample() {
-			driver.navigate().to(jQueryURL);
-			WebElement frameElement=driver.findElement(frameLocator);
-			driver.switchTo().frame(frameElement);
-			wait.until(ExpectedConditions.presenceOfElementLocated(tagText));
-			driver.findElement(tagText).click();
-			selectJQueryDate("21");
-		}
-		
-	
-		}*/
 }
