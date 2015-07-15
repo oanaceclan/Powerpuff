@@ -12,7 +12,7 @@ public class JavaMailPage {
 	public static void main(String[] args) {
 
 		String Subject = "Vacation Request Cancellation";
-
+		String Content = "Dear Oana,The Vacation Request you have submitted for the interval:7/September/2015-11/September/2015 has been Cancelled.";
 		Properties props = new Properties();
 		props.setProperty("mail.store.protocol", "imaps");
 
@@ -34,7 +34,8 @@ public class JavaMailPage {
 			System.out.println("CONTENT:" + msg.getContent());
 
 			String getSubject = msg.getSubject();
-
+			String getContent = msg.getContent().toString();
+			
 			int result = Subject.compareTo(getSubject);
 			if (result == 0) {
 				System.out.println("ok");
@@ -42,7 +43,20 @@ public class JavaMailPage {
 				System.out.println("not ok");
 			}
 
+			for (int i=1; i<Content.length();i++){
+				String c = Content.replaceAll("\\s","");
+				String c2= getContent.replaceAll("\\s","");
+				
+				int result2 = c.compareTo(getSubject);
+				if (result2 == 0) {
+					System.out.println("ok");
+				} else {
+					System.out.println("not ok");
+				}
 
+				
+				
+			}
 		} catch (Exception mex) {
 			mex.printStackTrace();
 		}
