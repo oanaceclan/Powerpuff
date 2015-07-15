@@ -41,6 +41,11 @@ public class ViewVacationFilterSteps extends ScenarioSteps {
 		viewvacationFilterPage.first_name(keyword);
 	}
 	
+	@Step
+	public void search(String word) {
+		viewvacationFilterPage.search(word);
+	}
+	
 	@StepGroup
     public void loginWith(String lastName, String firstName) {
     	lastName("Ceclan");
@@ -50,12 +55,19 @@ public class ViewVacationFilterSteps extends ScenarioSteps {
 	//@Step
 	//public void inactiveUsers() {
 		//viewvacationFilterPage.inactive_users();
-	//}
+	//}*/
 	
 	@Step
 	public void applyButton() {
 		viewvacationFilterPage.applyButton();
 	}
+	
+	@Step
+	public void cancel()
+	{
+	viewvacationFilterPage.cancel();
+	}
+	
 }
 
 	

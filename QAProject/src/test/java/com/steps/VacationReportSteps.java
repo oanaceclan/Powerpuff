@@ -7,7 +7,6 @@ import net.thucydides.core.steps.ScenarioSteps;
 
 import com.pages.VacationReportPage;
 
-//import org.junit.Assert;
 
 @SuppressWarnings("serial")
 public class VacationReportSteps extends ScenarioSteps {
@@ -21,7 +20,6 @@ public class VacationReportSteps extends ScenarioSteps {
 
 	@Step
 	public void ExportButton() {
-		Assert.assertTrue("Vacation Report button is not present",
-				vacationReportPage.isExportButtonPresent());
+		Assert.assertTrue("Vacation Report button is not present",vacationReportPage.isExportButtonPresent());
 	}
 }

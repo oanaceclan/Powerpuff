@@ -49,5 +49,9 @@ public class ViewVacationFilterTest {
     	viewvacationFilterSteps.lastName("Ceclan");
     	//viewvacationFilterSteps.inactiveUsers();
     	viewvacationFilterSteps.applyButton();
+    	viewvacationFilterSteps.search("sick");
+    	viewvacationFilterSteps.cancel();
+    	
+    	
 	}
 }

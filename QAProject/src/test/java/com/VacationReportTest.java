@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import tools.Constants;
 
 
+
+import com.steps.InboxSteps;
 import com.steps.LoginSteps;
 import com.steps.VacationReportSteps;
 
@@ -24,6 +26,9 @@ public class VacationReportTest {
 
     @ManagedPages(defaultUrl = Constants.EvoPortal)
     public Pages pages;
+    
+    @Steps
+    public InboxSteps inboxSteps;
 
     @Steps
     public VacationReportSteps vacationReportSteps;
@@ -37,6 +42,7 @@ public class VacationReportTest {
     	loginSteps.enterUsername(Constants.DMUserName);
     	loginSteps.enterPassword(Constants.DMPassWord);
     	loginSteps.startSearch();
+    	inboxSteps.startVacationbtn();
     	vacationReportSteps.vacationReportbtn();
     	vacationReportSteps.ExportButton();
 	}
