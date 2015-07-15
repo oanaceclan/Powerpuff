@@ -22,6 +22,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="D:/Powerpuff/QAProject/javax.mail.jar"/>
+=======
+	<classpathentry kind="lib" path="D:/Powerpuff/QAProject/QAProject/javax.mail.jar"/>
+>>>>>>> branch 'master' of https://github.com/oanaceclan/Powerpuff.git
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
