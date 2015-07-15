@@ -44,7 +44,7 @@ public class MyRequestsTest {
 	    	myReqSteps.daysNumber();
 	    	myReqSteps.vacationStatus();
 	    	myReqSteps.applyButton();
-	    	myReqSteps.checkwithdrawnSts();
+	    	myReqSteps.getStatus("withdrawn");
 	    	
 		}
 }

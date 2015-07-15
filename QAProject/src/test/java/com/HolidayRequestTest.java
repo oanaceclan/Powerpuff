@@ -1,8 +1,10 @@
 package com;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import com.steps.HolidayRequestSteps;
 import com.steps.LoginSteps;
 import com.steps.NewVacationRequestSteps;
 
@@ -27,8 +29,11 @@ public class HolidayRequestTest {
     
     @Steps
     public NewVacationRequestSteps vacationSteps;
+    
+    @Steps
+    public HolidayRequestSteps holidaySteps;
 
-    //@Test
+    @Test
 	public void checkVacationButton() {
 		loginSteps.openLoginPage();
 		loginSteps.enterUsername("Oana");
@@ -36,8 +41,14 @@ public class HolidayRequestTest {
 		loginSteps.startSearch();
     	vacationSteps.startVacationbtn();
     	vacationSteps.newRequestbtn();
+    	holidaySteps.selectDatePicker();
+    	holidaySteps.selectStartDate() ;
+    	holidaySteps.selectEndDate();
+    	holidaySteps.saveRequest();
+    		
+    	}
     	
     	//vacationSteps.checkVacDaysLeft();
     	//vacationSteps.checkVacationButtonIs();
 	}
-}
+
