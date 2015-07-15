@@ -10,7 +10,7 @@ public class JavaMailPage {
         try {
             Session session = Session.getInstance(props, null);
             Store store = session.getStore();
-            store.connect("mail.evozon.com", "roxana.rus@evozon.com", "Rus.Roxana1");
+            store.connect("mail.evozon.com", "oana.ceclan@evozon.com", "Oana.ceclan9");
             Folder inbox = store.getFolder("INBOX");
             inbox.open(Folder.READ_ONLY);
             Message msg = inbox.getMessage(inbox.getMessageCount());
