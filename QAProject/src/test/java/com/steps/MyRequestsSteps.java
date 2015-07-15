@@ -1,5 +1,7 @@
 package com.steps;
 
+import org.junit.Assert;
+
 import com.pages.MyRequestsPage;
 
 import net.thucydides.core.annotations.Step;
@@ -36,4 +38,14 @@ public class MyRequestsSteps extends ScenarioSteps {
 		myVacationRequests.apply_button();
 	}
 
+	@Step
+	public void withdrawnStatus() {
+		myVacationRequests.apply_button();
+	}
+	
+	@Step
+    public void checkwithdrawnSts() {
+    	Assert.assertTrue("Withdrawn status is not present!!!", myVacationRequests.isWithdrawnStsPresent());
+    }
+    
 }

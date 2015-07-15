@@ -25,7 +25,8 @@ public class MyRequestsPage extends PageObject {
 	@FindBy(id="_evovacation_WAR_EvoVacationportlet_applyButton")
 	private WebElementFacade applyButton;
 
-	
+	@FindBy(css="[text()='Withdrawn']")
+	private WebElementFacade withdrawnSts;
 	
 	public void my_requests_button() {
 		myRequestsButton.click();
@@ -45,5 +46,9 @@ public class MyRequestsPage extends PageObject {
 	
 	public void apply_button() {
 		applyButton.click();
+	}
+	
+	public boolean isWithdrawnStsPresent() {
+		return withdrawnSts.isPresent();
 	}
 }
