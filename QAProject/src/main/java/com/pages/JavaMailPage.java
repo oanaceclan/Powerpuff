@@ -8,10 +8,12 @@ import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Store;
 
+import tools.Constants;
+
 public class JavaMailPage {
 	public static void main(String[] args) {
 
-		String Subject = "Vacation Request Cancellation";
+		String Subject = Constants.Subject;
 
 		Properties props = new Properties();
 		props.setProperty("mail.store.protocol", "imaps");

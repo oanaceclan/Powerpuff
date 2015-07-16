@@ -33,8 +33,8 @@ public class InboxTest {
     @Test
 	public void checkVacationButton() {
     	loginSteps.openLoginPage();
-    	loginSteps.enterUsername("Roxana");
-    	loginSteps.enterPassword("test1");
+    	loginSteps.enterUsername(Constants.DMUserName);
+    	loginSteps.enterPassword(Constants.DMPassWord);
     	loginSteps.startSearch();
     	inboxSteps.startVacationbtn();
     	inboxSteps.inboxbtn();
