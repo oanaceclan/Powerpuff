@@ -56,17 +56,21 @@ public class VacationReportFilterSteps extends ScenarioSteps {
 		vacationReportFilterPage.first_name(keyword);
 	}
 	
-	/*
-	 * @Step public void search(String word) {
-	 * viewvacationFilterPage.search(word); }
-	 */
-
 	@StepGroup
 	public void loginWith(String lastName, String firstName) {
 		lastName("Ceclan");
 		firstName("Oana");
 
 	}
+	
+	/*
+	 * @Step public void search(String word) {
+	 * viewvacationFilterPage.search(word); }
+	 */
+	
+	
+
+	
 	
 	@Step
 	public void ExportButton() {

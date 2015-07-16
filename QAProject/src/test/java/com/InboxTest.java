@@ -35,6 +35,10 @@ public class InboxTest {
     	loginSteps.openLoginPage();
     	loginSteps.EnterUsername("Roxana");
     	loginSteps.EnterPassword("test1");
+
+    	loginSteps.EnterUsername(Constants.DMUserName);
+    	loginSteps.EnterPassword(Constants.DMPassWord);
+
     	loginSteps.startSearch();
     	inboxSteps.startVacationbtn();
     	inboxSteps.inboxbtn();

@@ -43,7 +43,10 @@ public class VacationReportFilterPage extends PageObject {
 
 	public void select_month(String text) {
 		exportMonth.click();
+		exportMonth.click();
+		//exportMonth.waitUntilVisible();
 		(exportMonth).selectByVisibleText(text);
+		//exportMonth.click();
 	}
 
 	public void select_year(String text) {
