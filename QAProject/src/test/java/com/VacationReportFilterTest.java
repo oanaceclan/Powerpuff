@@ -42,12 +42,14 @@ public class VacationReportFilterTest {
     	loginSteps.startSearch();
     	inboxSteps.startVacationbtn();
     	vacationReportFilterSteps.vacationReportButton();
-    	vacationReportFilterSteps.exportMonth("November");
-    	vacationReportFilterSteps.exportYear("2010");
+    	vacationReportFilterSteps.exportMonth("August");
+    	vacationReportFilterSteps.exportYear("2014");
     	vacationReportFilterSteps.approved();
     	vacationReportFilterSteps.pending();
     	vacationReportFilterSteps.cim();
     	vacationReportFilterSteps.other();
+    	vacationReportFilterSteps.firstName("Oana");
+    	vacationReportFilterSteps.lastName("Ceclan");
     	vacationReportFilterSteps.ExportButton();
 	}
 }
