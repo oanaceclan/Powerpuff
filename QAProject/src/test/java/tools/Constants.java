@@ -12,6 +12,9 @@ public class Constants {
 	
 	public final static String PassWord="test";
 	
+
 	public final static String Subject="Vacation Request Cancellation";
+
+
 			
 }
