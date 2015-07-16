@@ -8,11 +8,13 @@ import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Store;
 
+import tools.Constants;
+
 public class JavaMailValidatePage {
 	public static void main(String[] args) {
 
-		String Subject = "You have submitted a new Vacation Request";
-		String Content = "DearOana,<br/><br/>Wehavereceivedyour<i>SickLeave</i>requestbetween<strong>07/09/2015-11/09/2015</strong>.<br/>Wewishyoutogetwellsoonandpleaseremembertobringyoursickleavepapersfromyourfamilydoctor,assoonasyougetbacktowork.<!--<br/><br/>Cheers,<br/>TheEvoPortalTeam--><br/><br/>Cheers,<br/>TheEvoPortalTeam";
+		String Subject = Constants.MessageSubject;
+		String Content = Constants.MessageContent;
 		Properties props = new Properties();
 		props.setProperty("mail.store.protocol", "imaps");
 
@@ -32,25 +34,25 @@ public class JavaMailValidatePage {
 			System.out.println("SUBJECT:" + msg.getSubject());
 			System.out.println("CONTENT:" + msg.getContent());
 
-			String getSubject = msg.getSubject();
-			String getContent = msg.getContent().toString();
+			String getTheSubject = msg.getSubject();
+			String getTheContent = msg.getContent().toString();
 
 			String c = Content.replaceAll("\\s", "");
-			String c2 = getContent.replaceAll("\\s", "");
+			String c2 = getTheContent.replaceAll("\\s", "");
 
-			int result = Subject.compareTo(getSubject);
+			int result = Subject.compareTo(getTheSubject);
 			int result2 = c.compareTo(c2);
 
 			if (result == 0) {
-				System.out.println("ok");
+				System.out.println("Valid subject");
 			} else {
-				System.out.println("not ok");
+				System.out.println("The subject is not valid");
 			}
 
 			if (result2 == 0) {
 				System.out.println("Valid content");
 			} else {
-				System.out.println("Content is not valid");
+				System.out.println("The content is not valid");
 			}
 
 		} catch (Exception mex) {

@@ -16,7 +16,7 @@ import com.steps.LoginSteps;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom("/Resources/data.csv")
-public class LoginTest {
+public class LoginWithInvalidCredentialsTest {
 	
 	String username, password;
 	
@@ -30,19 +30,10 @@ public class LoginTest {
 	public LoginSteps loginSteps;
 
 	@Test
-	public void verifyLoginWithValidCredentials() {
-		loginSteps.openLoginPage();
-		loginSteps.EnterUsername(Constants.UserName);
-		loginSteps.EnterPassword(Constants.PassWord);
-		loginSteps.signInButtonClick();
-		loginSteps.checkLoginIsPerformed();
+	public void verifyLoginWithInvalidCredentials() {
+		loginSteps.loginWith(Constants.UserName, Constants.WrongPassWord);
+		loginSteps.shouldSeeErrorMessage(Constants.ErrorMessage1);
+		loginSteps.shouldSeeErrorMessage(Constants.ErrorMessage1);
 	}
-
-//	@Test
-//	public void verifyLoginWithInvalidCredentials() {
-//		loginSteps.loginWith(Constants.UserName, Constants.WrongPassWord);
-//		loginSteps.shouldSeeErrorMessage(Constants.ErrorMessage1);
-//		loginSteps.shouldSeeErrorMessage(Constants.ErrorMessage1);
-//	}
 
 }
