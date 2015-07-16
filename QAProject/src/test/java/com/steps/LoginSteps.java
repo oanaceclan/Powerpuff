@@ -27,13 +27,13 @@ public class LoginSteps extends ScenarioSteps {
     }
     
     @Step
-    public void enterUsername(String keyword) {
-        loginPage.enter_username(keyword);
+    public void EnterUsername(String keyword) {
+        loginPage.enterUsername(keyword);
     }
 
     @Step
-    public void enterPassword(String keyword) {
-        loginPage.enter_password(keyword);
+    public void EnterPassword(String keyword) {
+        loginPage.enterPassword(keyword);
     }
     
     @Step
@@ -44,8 +44,8 @@ public class LoginSteps extends ScenarioSteps {
     @StepGroup
     public void loginWith(String username, String password) {
     	openLoginPage();
-    	enterUsername(username);
-    	enterPassword(password);
+    	EnterUsername(username);
+    	EnterPassword(password);
     	startSearch();
     }
     
@@ -55,7 +55,7 @@ public class LoginSteps extends ScenarioSteps {
     }
     
     @Step
-    public void should_see_error_message(String eMessage) {
+    public void shouldSeeErrorMessage(String eMessage) {
         assertThat(loginPage.getErrorMessages(), hasItem(containsString(eMessage)));
     }
 

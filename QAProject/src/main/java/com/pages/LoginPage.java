@@ -34,12 +34,12 @@ public class LoginPage extends PageObject {
 		return signOutButton.isPresent();
 	}
 
-	public void enter_username(String keyword) {
+	public void enterUsername(String keyword) {
 		username.waitUntilVisible();
 		username.type(keyword);
 	}
 
-	public void enter_password(String keyword) {
+	public void enterPassword(String keyword) {
 		password.type(keyword);
 	}
 

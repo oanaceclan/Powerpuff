@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.steps.LoginSteps;
-import com.steps.MyRequestsSteps;
+import com.steps.MyRequestsFilterSteps;
 import com.steps.NewVacationRequestSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -15,7 +15,7 @@ import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
 
 @RunWith(SerenityRunner.class)
-public class MyRequestsTest {
+public class MyRequestsFilterTest {
 
 	 @Managed(uniqueSession = true)
 	    public WebDriver webdriver;
@@ -27,7 +27,7 @@ public class MyRequestsTest {
 	    public NewVacationRequestSteps vacationSteps;
 	    
 	    @Steps
-	    public MyRequestsSteps myReqSteps;
+	    public MyRequestsFilterSteps myReqSteps;
 	    
 	    @Steps
 	    public LoginSteps loginSteps;
@@ -35,8 +35,8 @@ public class MyRequestsTest {
 	    @Test
 		public void myRequestsFilter() {
 	    	loginSteps.openLoginPage();
-	    	loginSteps.enterUsername("Oana");
-	    	loginSteps.enterPassword("test");
+	    	loginSteps.EnterUsername("Oana");
+	    	loginSteps.EnterPassword("test");
 	    	loginSteps.startSearch();
 	    	vacationSteps.startVacationbtn();
 	    	myReqSteps.myRequestsbtn();
@@ -44,7 +44,8 @@ public class MyRequestsTest {
 	    	myReqSteps.daysNumber();
 	    	myReqSteps.vacationStatus();
 	    	myReqSteps.applyButton();
-	    	myReqSteps.getStatus("withdrawn");
+	    	myReqSteps.getStatus("pending");
+	    	myReqSteps.clickOnCancelButton();
 	    	
 		}
 }

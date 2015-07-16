@@ -1,15 +1,17 @@
 package com.steps;
 
-import com.pages.MyRequestsPage;
+import org.junit.Assert;
+
+import com.pages.MyRequestsFilterPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class MyRequestsSteps extends ScenarioSteps {
+public class MyRequestsFilterSteps extends ScenarioSteps {
 
 	
-	MyRequestsPage myVacationRequests;
+	MyRequestsFilterPage myVacationRequests;
 
 	@Step
 	public void myRequestsbtn() {
@@ -41,6 +43,15 @@ public class MyRequestsSteps extends ScenarioSteps {
 		myVacationRequests.search(word);
 	}
 	
+	@Step
+	public void clickOnCancelButton() {
+		myVacationRequests.cancelBtn();
+	}
+	
+	@Step
+    public void checkWithdrawnActionIsPerformed() {
+    	Assert.assertTrue("SignOut button is not present!!!", myVacationRequests.isWithdrawnMessagePresent());
+    }
 	
     
 }

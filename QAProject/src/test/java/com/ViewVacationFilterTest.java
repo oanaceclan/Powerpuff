@@ -37,8 +37,8 @@ public class ViewVacationFilterTest {
     @Test
 	public void checkVacationButton() {
     	loginSteps.openLoginPage();
-    	loginSteps.enterUsername(Constants.DMUserName);
-    	loginSteps.enterPassword(Constants.DMPassWord);
+    	loginSteps.EnterUsername(Constants.DMUserName);
+    	loginSteps.EnterPassword(Constants.DMPassWord);
     	loginSteps.startSearch();
     	inboxSteps.startVacationbtn();
     	viewvacationFilterSteps.viewvacationbtn();

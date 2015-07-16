@@ -32,8 +32,8 @@ public class NewVacationRequestTest {
     @Test
 	public void checkVacationButton() {
 		loginSteps.openLoginPage();
-		loginSteps.enterUsername("Oana");
-		loginSteps.enterPassword("test");
+		loginSteps.EnterUsername("Oana");
+		loginSteps.EnterPassword("test");
 		loginSteps.startSearch();
     	vacationSteps.startVacationbtn();
     	vacationSteps.newRequestbtn();

@@ -8,11 +8,11 @@ import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Store;
 
-public class JavaMailPage {
+public class JavaMailValidatePage {
 	public static void main(String[] args) {
 
-		String Subject = "Vacation Request Cancellation";
-		String Content = "Dear Oana,The Vacation Request you have submitted for the interval:7/September/2015-11/September/2015 has been Cancelled.";
+		String Subject = "You have submitted a new Vacation Request";
+		String Content = "DearOana,<br/><br/>Wehavereceivedyour<i>SickLeave</i>requestbetween<strong>07/09/2015-11/09/2015</strong>.<br/>Wewishyoutogetwellsoonandpleaseremembertobringyoursickleavepapersfromyourfamilydoctor,assoonasyougetbacktowork.<!--<br/><br/>Cheers,<br/>TheEvoPortalTeam--><br/><br/>Cheers,<br/>TheEvoPortalTeam";
 		Properties props = new Properties();
 		props.setProperty("mail.store.protocol", "imaps");
 
@@ -27,45 +27,35 @@ public class JavaMailPage {
 			for (Address address : in) {
 				System.out.println("FROM:" + address.toString());
 			}
-			// Multipart mp = (Multipart) msg.getContent();
-			// BodyPart bp = mp.getBodyPart(0);
+
 			System.out.println("SENT DATE:" + msg.getSentDate());
 			System.out.println("SUBJECT:" + msg.getSubject());
 			System.out.println("CONTENT:" + msg.getContent());
 
 			String getSubject = msg.getSubject();
 			String getContent = msg.getContent().toString();
-			
+
+			String c = Content.replaceAll("\\s", "");
+			String c2 = getContent.replaceAll("\\s", "");
+
 			int result = Subject.compareTo(getSubject);
+			int result2 = c.compareTo(c2);
+
 			if (result == 0) {
 				System.out.println("ok");
 			} else {
 				System.out.println("not ok");
 			}
 
-			for (int i=1; i<Content.length();i++){
-				String c = Content.replaceAll("\\s","");
-				String c2= getContent.replaceAll("\\s","");
-				
-				int result2 = c.compareTo(getSubject);
-				if (result2 == 0) {
-					System.out.println("ok");
-				} else {
-					System.out.println("not ok");
-				}
-
-				
-				
+			if (result2 == 0) {
+				System.out.println("Valid content");
+			} else {
+				System.out.println("Content is not valid");
 			}
+
 		} catch (Exception mex) {
 			mex.printStackTrace();
 		}
-
-		// for (int i = 1; i < Message.length(); i++) {
-		// if(Message.get(i).getText().contains(Subject))
-		// System.out.println("Email validate");
-		//
-		// }
 
 	}
 }

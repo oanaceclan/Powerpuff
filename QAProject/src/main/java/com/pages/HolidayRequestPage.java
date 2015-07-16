@@ -9,43 +9,63 @@ import net.thucydides.core.pages.PageObject;
 //@DefaultUrl("http://en.wiktionary.org/wiki/Wiktionary:Main_Page")
 public class HolidayRequestPage extends PageObject {
 
-	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_startDate")
-	private WebElementFacade datePicker;
 
 	@FindBy(css = ".Zebra_DatePicker_Icon_Wrapper input[id='_evovacation_WAR_EvoVacationportlet_startDate']")
-	private WebElement startdate;
+	private WebElement startDatePicker;
+	
+	@FindBy(css = "div:nth-child(11) > table.dp_header > tbody > tr > td.dp_caption")
+	private WebElementFacade goToMonthSelect;
+	
+	@FindBy(css = "div:nth-child(11) > table.dp_monthpicker > tbody > tr:nth-child(3) > td.dp_month_8")
+	private WebElementFacade monthSelect;
+	
+	@FindBy(css = "div:nth-child(11) > table.dp_daypicker > tbody > tr:nth-child(2) > td:nth-child(3)")
+	private WebElement selectStartDate;
 	
 	@FindBy(css = ".Zebra_DatePicker_Icon_Wrapper input[id='_evovacation_WAR_EvoVacationportlet_endDate']")
-	private WebElement enddate;
+	private WebElement endDatePicker;
+
+	@FindBy(css = "div:nth-child(12) > table.dp_header > tbody > tr > td.dp_caption")
+	private WebElement goToMonthSelectForEndDate;
 	
-	@FindBy(css = "div:nth-child(11) > table.dp_daypicker > tbody > tr:nth-child(4) > td.dp_selected.dp_current")
-	private WebElement currentdate;
+	@FindBy(css = "div:nth-child(12) > table.dp_monthpicker > tbody > tr:nth-child(3) > td.dp_month_8")
+	private WebElementFacade monthSelectForEndDate;
 	
-	@FindBy(css = "div:nth-child(12) > table.dp_daypicker > tbody > tr:nth-child(4) > td:nth-child(6)")
-	private WebElement end;
+	@FindBy(css = "div:nth-child(12) > table.dp_daypicker > tbody > tr:nth-child(2) > td:nth-child(6)")
+	private WebElement selectEndDate;
+	
+	
+	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_type_CF")
+	private WebElementFacade vacationWithoutPayment;
 	
 	@FindBy(css = ".aui-button-holder  > .aui-button-submit [id='_evovacation_WAR_EvoVacationportlet_saveButton']")
-	private WebElement savebutton;
+	private WebElement saveButton;
 	
-	public void datePick() {
-		element(datePicker).waitUntilVisible();
-		datePicker.click();
+	
+	
+	
+	public void selectStartDate() {
+		startDatePicker.click();
+		goToMonthSelect.click();
+		monthSelect.click();
+		selectStartDate.click();
 	}
 
-	public void SelectStartDate() {
-		startdate.click();
-		currentdate.click();
-	}
+	public void selectEndDate() {
+		endDatePicker.click();
+		goToMonthSelectForEndDate.click();
+		monthSelectForEndDate.click();
+		selectEndDate.click();
+			}
 
-	public void SelectEndDate() {
-		enddate.click();
-		end.click();
+	public void selectVacationWithoutPayment() {
+		vacationWithoutPayment.click();
 	}
-
 	public void save() {
-		savebutton.click();
+		saveButton.click();
 	}
 
+	
 	
 
 }

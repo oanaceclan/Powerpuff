@@ -10,26 +10,30 @@ public class HolidayRequestSteps extends ScenarioSteps {
 
 	HolidayRequestPage holidayReqPage;
 	
+	
 	@Step
-	public void selectDatePicker() {
-		holidayReqPage.datePick();
+	public void SelectStartDate() {
+		holidayReqPage.selectStartDate();
 	}
 	
 	@Step
-	public void selectStartDate() {
-		holidayReqPage.SelectStartDate();
+	public void SelectEndDate() {
+		holidayReqPage.selectEndDate();
 	}
+	
 	
 	@Step
-	public void selectEndDate() {
-		holidayReqPage.SelectEndDate();
+	public void selectVacationWithoutPaymentType() {
+		holidayReqPage.selectVacationWithoutPayment();
 	}
-	
 	
 	@Step
 	public void saveRequest() {
 		holidayReqPage.save();
 	}
+	
+	
+	
 
 	
 }

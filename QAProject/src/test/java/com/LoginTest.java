@@ -31,13 +31,13 @@ public class LoginTest {
 	@Test
 	public void loginWithValidCredentials() {
 		loginSteps.openLoginPage();
-		loginSteps.enterUsername(username);
-		loginSteps.enterPassword(password);
+		loginSteps.EnterUsername(username);
+		loginSteps.EnterPassword(password);
 		loginSteps.startSearch();
 		loginSteps.checkLoginIsPerformed();
 	}
 
-	//@Test
+	@Test
 	public void loginWithInvalidCredentials() {
 		/*loginSteps.openLoginPage();
 		loginSteps.enterUsername("Oana");
@@ -45,9 +45,8 @@ public class LoginTest {
 		loginSteps.start_search();*/
 		loginSteps.loginWith("Oana", "testing");
 		
-		loginSteps.should_see_error_message("Your request failed to complete.");
-		loginSteps.should_see_error_message(
-				"Authentication failed. Please try again using your zimbra credentials (without @evozon.com).");
+		loginSteps.shouldSeeErrorMessage("Your request failed to complete.");
+		loginSteps.shouldSeeErrorMessage("Authentication failed. Please try again using your zimbra credentials (without @evozon.com).");
 	}
 
 }

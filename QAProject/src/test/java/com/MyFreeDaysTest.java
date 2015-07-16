@@ -37,8 +37,8 @@ public class MyFreeDaysTest {
     @Test
 	public void checkButton() {
 		loginSteps.openLoginPage();
-		loginSteps.enterUsername("Oana");
-		loginSteps.enterPassword("test");
+		loginSteps.EnterUsername("Oana");
+		loginSteps.EnterPassword("test");
 		loginSteps.startSearch();
     	vacationSteps.startVacationbtn();
     	myFreeDaysSteps.myFreeDaysbtn();

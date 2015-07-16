@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.HolidayRequestSteps;
 import com.steps.LoginSteps;
+import com.steps.MyRequestsFilterSteps;
 import com.steps.NewVacationRequestSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -17,38 +18,45 @@ import net.thucydides.core.pages.Pages;
 @RunWith(SerenityRunner.class)
 public class HolidayRequestTest {
 
-    @Managed(uniqueSession = true)
-    public WebDriver webdriver;
+	@Managed(uniqueSession = true)
+	public WebDriver webdriver;
 
-    @ManagedPages(defaultUrl = "http://172.22.4.88:9091/login")
-    public Pages pages;
+	@ManagedPages(defaultUrl = "http://172.22.4.88:9091/login")
+	public Pages pages;
 
+	@Steps
+	public LoginSteps loginSteps;
 
-    @Steps
-    public LoginSteps loginSteps;
-    
-    @Steps
-    public NewVacationRequestSteps vacationSteps;
-    
-    @Steps
-    public HolidayRequestSteps holidaySteps;
+	@Steps
+	public NewVacationRequestSteps vacationSteps;
 
-    @Test
+	@Steps
+	public HolidayRequestSteps holidaySteps;
+
+	@Steps
+	public MyRequestsFilterSteps myReqSteps;
+
+	@Test
 	public void checkVacationButton() {
 		loginSteps.openLoginPage();
-		loginSteps.enterUsername("Oana");
-		loginSteps.enterPassword("test");
+		loginSteps.EnterUsername("Oana");
+		loginSteps.EnterPassword("test");
 		loginSteps.startSearch();
-    	vacationSteps.startVacationbtn();
-    	vacationSteps.newRequestbtn();
-    	holidaySteps.selectDatePicker();
-    	holidaySteps.selectStartDate() ;
-    	holidaySteps.selectEndDate();
-    	holidaySteps.saveRequest();
-    		
-    	}
-    	
-    	//vacationSteps.checkVacDaysLeft();
-    	//vacationSteps.checkVacationButtonIs();
+		vacationSteps.startVacationbtn();
+		vacationSteps.newRequestbtn();
+		holidaySteps.SelectStartDate();
+		holidaySteps.SelectEndDate();
+		holidaySteps.selectVacationWithoutPaymentType();
+		holidaySteps.saveRequest();
+		myReqSteps.myRequestsbtn();
+		myReqSteps.vacationType();
+		myReqSteps.daysNumber();
+		myReqSteps.vacationStatus();
+		myReqSteps.applyButton();
+		myReqSteps.getStatus("pending");
+		myReqSteps.clickOnCancelButton();
+		myReqSteps.checkWithdrawnActionIsPerformed();
+
 	}
 
+}
