@@ -10,48 +10,46 @@ import net.thucydides.core.steps.ScenarioSteps;
 @SuppressWarnings("serial")
 public class MyRequestsFilterSteps extends ScenarioSteps {
 
-	
 	MyRequestsFilterPage myVacationRequests;
 
 	@Step
-	public void myRequestsbtn() {
-		myVacationRequests.my_requests_button();
+	public void myRequestsButtonClick() {
+		myVacationRequests.myRequestsButton();
 	}
-	
+
 	@Step
-	public void vacationType() {
-		myVacationRequests.vacation_without_payment_button();
+	public void vacationTypeSelect() {
+		myVacationRequests.vacationWithoutPaymentButton();
 	}
-	
+
 	@Step
-	public void daysNumber() {
-		myVacationRequests.days_number();
+	public void daysNumberSelect() {
+		myVacationRequests.daysNumber();
 	}
-	
+
 	@Step
-	public void vacationStatus() {
-		myVacationRequests.vacation_status();
+	public void vacationStatusSelect() {
+		myVacationRequests.vacationStatus();
 	}
-	
+
 	@Step
-	public void applyButton() {
-		myVacationRequests.apply_button();
+	public void applyButtonClick() {
+		myVacationRequests.applyButton();
 	}
 
 	@Step
 	public void getStatus(String word) {
 		myVacationRequests.search(word);
 	}
-	
+
 	@Step
 	public void clickOnCancelButton() {
 		myVacationRequests.cancelBtn();
 	}
-	
+
 	@Step
-    public void checkWithdrawnActionIsPerformed() {
-    	Assert.assertTrue("SignOut button is not present!!!", myVacationRequests.isWithdrawnMessagePresent());
-    }
-	
-    
+	public void checkWithdrawnActionIsPerformed() {
+		Assert.assertTrue("SignOut button is not present!!!", myVacationRequests.isWithdrawnMessagePresent());
+	}
+
 }

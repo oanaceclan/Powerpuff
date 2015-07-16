@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.steps.HolidayRequestSteps;
+import com.steps.VacationWithoutPaymentRequestSteps;
 import com.steps.LoginSteps;
 import com.steps.MyRequestsFilterSteps;
 import com.steps.NewVacationRequestSteps;
@@ -16,7 +16,7 @@ import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
 
 @RunWith(SerenityRunner.class)
-public class HolidayRequestTest {
+public class VacationWithoutPaymentRequestTest {
 
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
@@ -31,7 +31,7 @@ public class HolidayRequestTest {
 	public NewVacationRequestSteps vacationSteps;
 
 	@Steps
-	public HolidayRequestSteps holidaySteps;
+	public VacationWithoutPaymentRequestSteps holidaySteps;
 
 	@Steps
 	public MyRequestsFilterSteps myReqSteps;
@@ -42,17 +42,17 @@ public class HolidayRequestTest {
 		loginSteps.EnterUsername("Oana");
 		loginSteps.EnterPassword("test");
 		loginSteps.startSearch();
-		vacationSteps.startVacationbtn();
-		vacationSteps.newRequestbtn();
+		vacationSteps.startVacationButton();
+		vacationSteps.newRequestButtonClick();
 		holidaySteps.SelectStartDate();
 		holidaySteps.SelectEndDate();
 		holidaySteps.selectVacationWithoutPaymentType();
 		holidaySteps.saveRequest();
-		myReqSteps.myRequestsbtn();
-		myReqSteps.vacationType();
-		myReqSteps.daysNumber();
-		myReqSteps.vacationStatus();
-		myReqSteps.applyButton();
+		myReqSteps.myRequestsButtonClick();
+		myReqSteps.vacationTypeSelect();
+		myReqSteps.daysNumberSelect();
+		myReqSteps.vacationStatusSelect();
+		myReqSteps.applyButtonClick();
 		myReqSteps.getStatus("pending");
 		myReqSteps.clickOnCancelButton();
 		myReqSteps.checkWithdrawnActionIsPerformed();

@@ -1,14 +1,14 @@
 package com.steps;
 
-import com.pages.HolidayRequestPage;
+import com.pages.VacationWithoutPaymentRequestPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class HolidayRequestSteps extends ScenarioSteps {
+public class VacationWithoutPaymentRequestSteps extends ScenarioSteps {
 
-	HolidayRequestPage holidayReqPage;
+	VacationWithoutPaymentRequestPage holidayReqPage;
 	
 	
 	@Step

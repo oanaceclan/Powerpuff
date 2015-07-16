@@ -17,35 +17,35 @@ import net.thucydides.core.pages.Pages;
 @RunWith(SerenityRunner.class)
 public class MyRequestsFilterTest {
 
-	 @Managed(uniqueSession = true)
-	    public WebDriver webdriver;
+	@Managed(uniqueSession = true)
+	public WebDriver webdriver;
 
-	    @ManagedPages(defaultUrl = "http://172.22.4.88:9091/login")
-	    public Pages pages;
+	@ManagedPages(defaultUrl = "http://172.22.4.88:9091/login")
+	public Pages pages;
 
-	    @Steps
-	    public NewVacationRequestSteps vacationSteps;
-	    
-	    @Steps
-	    public MyRequestsFilterSteps myReqSteps;
-	    
-	    @Steps
-	    public LoginSteps loginSteps;
+	@Steps
+	public NewVacationRequestSteps vacationSteps;
 
-	    @Test
-		public void myRequestsFilter() {
-	    	loginSteps.openLoginPage();
-	    	loginSteps.EnterUsername("Oana");
-	    	loginSteps.EnterPassword("test");
-	    	loginSteps.startSearch();
-	    	vacationSteps.startVacationbtn();
-	    	myReqSteps.myRequestsbtn();
-	    	myReqSteps.vacationType();
-	    	myReqSteps.daysNumber();
-	    	myReqSteps.vacationStatus();
-	    	myReqSteps.applyButton();
-	    	myReqSteps.getStatus("pending");
-	    	myReqSteps.clickOnCancelButton();
-	    	
-		}
+	@Steps
+	public MyRequestsFilterSteps myReqSteps;
+
+	@Steps
+	public LoginSteps loginSteps;
+
+	@Test
+	public void myRequestsFilter() {
+		loginSteps.openLoginPage();
+		loginSteps.EnterUsername("Oana");
+		loginSteps.EnterPassword("test");
+		loginSteps.startSearch();
+		vacationSteps.startVacationButton();
+		myReqSteps.myRequestsButtonClick();
+		myReqSteps.vacationTypeSelect();
+		myReqSteps.daysNumberSelect();
+		myReqSteps.vacationStatusSelect();
+		myReqSteps.applyButtonClick();
+		myReqSteps.getStatus("pending");
+		myReqSteps.clickOnCancelButton();
+
+	}
 }

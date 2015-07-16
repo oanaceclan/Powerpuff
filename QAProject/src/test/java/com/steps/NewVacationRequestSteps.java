@@ -11,22 +11,19 @@ import net.thucydides.core.steps.ScenarioSteps;
 public class NewVacationRequestSteps extends ScenarioSteps {
 
 	NewVacationRequestPage newVacationReqPage;
-	
 
-	
 	@Step
-	public void startVacationbtn() {
-		newVacationReqPage.vacation_button();
+	public void startVacationButton() {
+		newVacationReqPage.vacationButton();
 	}
 
 	@Step
-	public void newRequestbtn() {
-		newVacationReqPage.new_request_button();
+	public void newRequestButtonClick() {
+		newVacationReqPage.newRequestButton();
 	}
 
-	
 	@Step
-	public void checkVacDaysLeft() {
+	public void checkVacationDaysLeftTextIsPresent() {
 		Assert.assertTrue("New request button is not present", newVacationReqPage.isVacDaysLeftPresent());
 	}
 }

@@ -11,15 +11,12 @@ import net.thucydides.core.steps.ScenarioSteps;
 public class MyFreeDaysSteps extends ScenarioSteps {
 
 	MyFreeDaysPage myFreeDaysPage;
-	
 
-	
 	@Step
-	public void myFreeDaysbtn() {
-		myFreeDaysPage.my_free_days();
+	public void myFreeDaysButtonClick() {
+		myFreeDaysPage.myFreeDays();
 	}
-	
-	
+
 	@Step
 	public void checkBackBtnIsPresent() {
 		Assert.assertTrue("My free days text is not present", myFreeDaysPage.isBackButtonPresent());

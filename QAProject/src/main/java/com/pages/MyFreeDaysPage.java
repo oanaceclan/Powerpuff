@@ -8,19 +8,17 @@ import net.thucydides.core.pages.PageObject;
 public class MyFreeDaysPage extends PageObject {
 
 	@FindBy(css = "[href*='menuItem=my-free-days']")
-	private WebElementFacade MyFreeDaysButton;
+	private WebElementFacade myFreeDaysButton;
 
-	@FindBy(id= "_evovacation_WAR_EvoVacationportlet_TabsBack")
+	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_TabsBack")
 	private WebElementFacade backButton;
-	
-	
-	public void my_free_days() {
-		MyFreeDaysButton.click();
+
+	public void myFreeDays() {
+		myFreeDaysButton.click();
 	}
 
 	public boolean isBackButtonPresent() {
 		return backButton.isPresent();
 	}
-
 
 }

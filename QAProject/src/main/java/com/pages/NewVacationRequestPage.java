@@ -14,21 +14,21 @@ public class NewVacationRequestPage extends PageObject {
 	private WebElementFacade newRequestButton;
 
 	@FindBy(id = "vacDaysLeft")
-	private WebElementFacade vacDaysLeft;
+	private WebElementFacade vacationDaysLeft;
 
 	public boolean isRequestButtonPresent() {
 		return newRequestButton.isPresent();
 	}
 
 	public boolean isVacDaysLeftPresent() {
-		return vacDaysLeft.isPresent();
+		return vacationDaysLeft.isPresent();
 	}
 
-	public void vacation_button() {
+	public void vacationButton() {
 		vacationbtn.click();
 	}
 
-	public void new_request_button() {
+	public void newRequestButton() {
 		newRequestButton.click();
 	}
 

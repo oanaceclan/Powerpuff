@@ -16,28 +16,27 @@ import net.thucydides.core.pages.Pages;
 @RunWith(SerenityRunner.class)
 public class NewVacationRequestTest {
 
-    @Managed(uniqueSession = true)
-    public WebDriver webdriver;
+	@Managed(uniqueSession = true)
+	public WebDriver webdriver;
 
-    @ManagedPages(defaultUrl = "http://172.22.4.88:9091/login")
-    public Pages pages;
+	@ManagedPages(defaultUrl = "http://172.22.4.88:9091/login")
+	public Pages pages;
 
+	@Steps
+	public LoginSteps loginSteps;
 
-    @Steps
-    public LoginSteps loginSteps;
-    
-    @Steps
-    public NewVacationRequestSteps vacationSteps;
+	@Steps
+	public NewVacationRequestSteps vacationSteps;
 
-    @Test
+	@Test
 	public void checkVacationButton() {
 		loginSteps.openLoginPage();
 		loginSteps.EnterUsername("Oana");
 		loginSteps.EnterPassword("test");
 		loginSteps.startSearch();
-    	vacationSteps.startVacationbtn();
-    	vacationSteps.newRequestbtn();
-    	vacationSteps.checkVacDaysLeft();
-    	
+		vacationSteps.startVacationButton();
+		vacationSteps.newRequestButtonClick();
+		vacationSteps.checkVacationDaysLeftTextIsPresent();
+
 	}
 }

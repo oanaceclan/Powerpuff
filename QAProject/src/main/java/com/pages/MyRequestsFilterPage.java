@@ -29,9 +29,6 @@ public class MyRequestsFilterPage extends PageObject {
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_applyButton")
 	private WebElementFacade applyButton;
 
-	@FindBy(css = "[class='aui-field-input aui-field-input-select aui-field-input-menu']")
-	private WebElementFacade itemsPerPage;
-
 	@FindBy(css = "[text()='Withdrawn']")
 	private WebElementFacade withdrawnSts;
 
@@ -44,23 +41,23 @@ public class MyRequestsFilterPage extends PageObject {
 	@FindBy(css = "div > div.view-vacation > div.aui-column.aui-w20.vacation-actions.aui-column-first > div > div > div:nth-child(2) > div > i")
 	private WebElementFacade messageAfterWithdrawn;
 
-	public void my_requests_button() {
+	public void myRequestsButton() {
 		myRequestsButton.click();
 	}
 
-	public void vacation_without_payment_button() {
+	public void vacationWithoutPaymentButton() {
 		vacationWithoutPaymentBtn.click();
 	}
 
-	public void days_number() {
+	public void daysNumber() {
 		daysNumber.click();
 	}
 
-	public void vacation_status() {
+	public void vacationStatus() {
 		vacationStatus.click();
 	}
 
-	public void apply_button() {
+	public void applyButton() {
 		applyButton.click();
 	}
 
@@ -68,14 +65,11 @@ public class MyRequestsFilterPage extends PageObject {
 		cancel.click();
 	}
 
-	public void items_per_page(String text) {
-		(itemsPerPage).selectByVisibleText(text);
-	}
-
 	public void search(String word) {
 		for (int i = 1; i < status.size(); i++) {
 			if (status.get(i).getText().toLowerCase().contains(word.toLowerCase()))
-				;
+				
+
 			{
 				System.out.println(status.get(i).getText());
 				status.get(i).click();
