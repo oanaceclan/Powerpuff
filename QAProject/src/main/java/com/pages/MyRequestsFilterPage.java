@@ -23,7 +23,7 @@ public class MyRequestsFilterPage extends PageObject {
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_FIFTHCheckbox")
 	private WebElementFacade daysNumber;
 
-	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_PENDINGCheckbox")
+	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_WITHDRAWNCheckbox")
 	private WebElementFacade vacationStatus;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_applyButton")
@@ -38,8 +38,8 @@ public class MyRequestsFilterPage extends PageObject {
 	@FindBy(css = ".col-6 a")
 	private List<WebElement> status;
 
-	@FindBy(css = "div > div.view-vacation > div.aui-column.aui-w20.vacation-actions.aui-column-first > div > div > div:nth-child(2) > div > i")
-	private WebElementFacade messageAfterWithdrawn;
+	@FindBy(css = "div > div.view-vacation > div.aui-column.aui-w70.vacation-info-column.aui-column-first > div > table > tbody > tr:nth-child(2) > td:nth-child(1) > div > b")
+	private WebElementFacade vacationStatusAfterWithdrawn;
 
 	public void myRequestsButton() {
 		myRequestsButton.click();
@@ -68,7 +68,6 @@ public class MyRequestsFilterPage extends PageObject {
 	public void search(String word) {
 		for (int i = 1; i < status.size(); i++) {
 			if (status.get(i).getText().toLowerCase().contains(word.toLowerCase()))
-				
 
 			{
 				System.out.println(status.get(i).getText());
@@ -79,7 +78,7 @@ public class MyRequestsFilterPage extends PageObject {
 
 	}
 
-	public boolean isWithdrawnMessagePresent() {
-		return messageAfterWithdrawn.isPresent();
+	public boolean isWithdrawnStatusPresent() {
+		return vacationStatusAfterWithdrawn.isPresent();
 	}
 }

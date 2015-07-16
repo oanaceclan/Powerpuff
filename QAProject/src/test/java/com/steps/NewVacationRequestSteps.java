@@ -17,13 +17,35 @@ public class NewVacationRequestSteps extends ScenarioSteps {
 		newVacationReqPage.vacationButton();
 	}
 
-	@Step
 	public void newRequestButtonClick() {
 		newVacationReqPage.newRequestButton();
+
 	}
 
 	@Step
-	public void checkVacationDaysLeftTextIsPresent() {
-		Assert.assertTrue("New request button is not present", newVacationReqPage.isVacDaysLeftPresent());
+	public void selectTheStartDate() {
+		newVacationReqPage.selectStartDate();
 	}
+
+	@Step
+	public void selectTheEndDate() {
+		newVacationReqPage.selectEndDate();
+	}
+
+	@Step
+	public void selectTheSpecialVacation() {
+		newVacationReqPage.selectSpecialVacation();
+	}
+
+	@Step
+	public void selectTheSpecialVacationType() {
+		newVacationReqPage.selectSpecialVacationType();
+	}
+
+	@Step
+	public void checkIfTheChildBirthRequestWasCreated() {
+		Assert.assertTrue("Child birth request was not created",
+				newVacationReqPage.childBirthVacationRequestWasCreated());
+	}
+
 }

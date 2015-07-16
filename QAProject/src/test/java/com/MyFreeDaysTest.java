@@ -13,6 +13,7 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
+import tools.Constants;
 
 @RunWith(SerenityRunner.class)
 public class MyFreeDaysTest {
@@ -20,7 +21,7 @@ public class MyFreeDaysTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
-	@ManagedPages(defaultUrl = "http://172.22.4.88:9091/login")
+	@ManagedPages(defaultUrl = Constants.EvoPortal)
 	public Pages pages;
 
 	@Steps
@@ -33,11 +34,11 @@ public class MyFreeDaysTest {
 	public MyFreeDaysSteps myFreeDaysSteps;
 
 	@Test
-	public void checkButton() {
+	public void checkIfTheBackButtonIsPresent() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername("Oana");
-		loginSteps.EnterPassword("test");
-		loginSteps.startSearch();
+		loginSteps.EnterUsername(Constants.UserName);
+		loginSteps.EnterPassword(Constants.PassWord);
+		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
 		myFreeDaysSteps.myFreeDaysButtonClick();
 		myFreeDaysSteps.checkBackBtnIsPresent();

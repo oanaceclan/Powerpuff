@@ -48,8 +48,7 @@ public class MyRequestsFilterSteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void checkWithdrawnActionIsPerformed() {
-		Assert.assertTrue("SignOut button is not present!!!", myVacationRequests.isWithdrawnMessagePresent());
+	public void checkWithdrawnStatusIsPresent() {
+		Assert.assertTrue("Withdrawn status is not present!!!", myVacationRequests.isWithdrawnStatusPresent());
 	}
-
 }

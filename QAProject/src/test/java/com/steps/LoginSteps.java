@@ -37,7 +37,7 @@ public class LoginSteps extends ScenarioSteps {
     }
     
     @Step
-    public void startSearch() {
+    public void signInButtonClick() {
     	loginPage.signIn();
     }
     
@@ -46,7 +46,7 @@ public class LoginSteps extends ScenarioSteps {
     	openLoginPage();
     	EnterUsername(username);
     	EnterPassword(password);
-    	startSearch();
+    	signInButtonClick();
     }
     
     @Step

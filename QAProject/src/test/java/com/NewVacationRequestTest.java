@@ -6,12 +6,14 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.LoginSteps;
 import com.steps.NewVacationRequestSteps;
+import com.steps.VacationWithoutPaymentRequestSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
+import tools.Constants;
 
 @RunWith(SerenityRunner.class)
 public class NewVacationRequestTest {
@@ -19,7 +21,7 @@ public class NewVacationRequestTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
-	@ManagedPages(defaultUrl = "http://172.22.4.88:9091/login")
+	@ManagedPages(defaultUrl = Constants.EvoPortal)
 	public Pages pages;
 
 	@Steps
@@ -27,16 +29,23 @@ public class NewVacationRequestTest {
 
 	@Steps
 	public NewVacationRequestSteps vacationSteps;
+	
+	@Steps
+	public VacationWithoutPaymentRequestSteps vacationRequestSteps;
 
 	@Test
-	public void checkVacationButton() {
+	public void checkIfTheSpecialVacationRequestWasCreated() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername("Oana");
-		loginSteps.EnterPassword("test");
-		loginSteps.startSearch();
+		loginSteps.EnterUsername(Constants.UserName);
+		loginSteps.EnterPassword(Constants.PassWord);
+		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
 		vacationSteps.newRequestButtonClick();
-		vacationSteps.checkVacationDaysLeftTextIsPresent();
-
+		vacationSteps.selectTheStartDate();
+		vacationSteps.selectTheEndDate();
+		vacationSteps.selectTheSpecialVacation();
+		vacationSteps.selectTheSpecialVacationType();
+		vacationRequestSteps.saveRequest();
+		vacationSteps.checkIfTheChildBirthRequestWasCreated();
 	}
 }

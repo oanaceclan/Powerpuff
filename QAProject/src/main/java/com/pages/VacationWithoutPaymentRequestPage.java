@@ -41,7 +41,8 @@ public class VacationWithoutPaymentRequestPage extends PageObject {
 	@FindBy(css = ".aui-button-holder  > .aui-button-submit [id='_evovacation_WAR_EvoVacationportlet_saveButton']")
 	private WebElement saveButton;
 	
-	
+	@FindBy(css = "div > div.view-vacation > div.aui-column.aui-w20.vacation-actions.aui-column-first > div > div > div:nth-child(2) > div > i")
+	private WebElementFacade messageAfterWithdrawn;
 	
 	
 	public void selectStartDate() {
@@ -65,7 +66,10 @@ public class VacationWithoutPaymentRequestPage extends PageObject {
 		saveButton.click();
 	}
 
-	
+	public boolean isWithdrawnMessagePresent() {
+		return messageAfterWithdrawn.isPresent();
+	}
+
 	
 
 }

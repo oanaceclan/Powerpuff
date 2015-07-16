@@ -6,6 +6,7 @@ import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.junit.annotations.UseTestDataFrom;
+import tools.Constants;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,31 +23,26 @@ public class LoginTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
-	@ManagedPages(defaultUrl = "http://172.22.4.88:9091/login")
+	@ManagedPages(defaultUrl = Constants.EvoPortal)
 	public Pages pages;
 
 	@Steps
 	public LoginSteps loginSteps;
 
 	@Test
-	public void loginWithValidCredentials() {
+	public void verifyLoginWithValidCredentials() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername(username);
-		loginSteps.EnterPassword(password);
-		loginSteps.startSearch();
+		loginSteps.EnterUsername(Constants.UserName);
+		loginSteps.EnterPassword(Constants.PassWord);
+		loginSteps.signInButtonClick();
 		loginSteps.checkLoginIsPerformed();
 	}
 
 	@Test
-	public void loginWithInvalidCredentials() {
-		/*loginSteps.openLoginPage();
-		loginSteps.enterUsername("Oana");
-		loginSteps.enterPassword("testing");
-		loginSteps.start_search();*/
-		loginSteps.loginWith("Oana", "testing");
-		
-		loginSteps.shouldSeeErrorMessage("Your request failed to complete.");
-		loginSteps.shouldSeeErrorMessage("Authentication failed. Please try again using your zimbra credentials (without @evozon.com).");
+	public void verifyLoginWithInvalidCredentials() {
+		loginSteps.loginWith(Constants.UserName, Constants.WrongPassWord);
+		loginSteps.shouldSeeErrorMessage(Constants.ErrorMessage1);
+		loginSteps.shouldSeeErrorMessage(Constants.ErrorMessage1);
 	}
 
 }

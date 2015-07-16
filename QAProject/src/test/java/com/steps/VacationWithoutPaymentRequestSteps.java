@@ -1,5 +1,7 @@
 package com.steps;
 
+import org.junit.Assert;
+
 import com.pages.VacationWithoutPaymentRequestPage;
 
 import net.thucydides.core.annotations.Step;
@@ -32,6 +34,11 @@ public class VacationWithoutPaymentRequestSteps extends ScenarioSteps {
 		holidayReqPage.save();
 	}
 	
+	@Step
+	public void checkWithdrawnActionIsPerformed() {
+		Assert.assertTrue("Withdrawn action was not performed!", holidayReqPage.isWithdrawnMessagePresent());
+	}
+
 	
 	
 
