@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.LoginSteps;
 import com.steps.MyRequestsFilterSteps;
-import com.steps.NewVacationRequestSteps;
+import com.steps.VacationMenuSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -25,7 +25,7 @@ public class MyRequestsFilterTest {
 	public Pages pages;
 
 	@Steps
-	public NewVacationRequestSteps vacationSteps;
+	public VacationMenuSteps vacationSteps;
 
 	@Steps
 	public MyRequestsFilterSteps myReqSteps;

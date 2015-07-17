@@ -9,9 +9,6 @@ import org.openqa.selenium.WebElement;
 //@DefaultUrl("http://en.wiktionary.org/wiki/Wiktionary:Main_Page")
 public class NewVacationRequestPage extends PageObject {
 
-	@FindBy(css = "[href='http://172.22.4.88:9091/vacation']")
-	private WebElementFacade vacationbtn;
-
 	@FindBy(css = "[href*='menuItem=new-request']")
 	private WebElementFacade newRequestBtn;
 
@@ -54,10 +51,6 @@ public class NewVacationRequestPage extends PageObject {
 	@FindBy(css = "div > div.view-vacation > div.aui-column.aui-w70.vacation-info-column.aui-column-first > div > div:nth-child(6) >b")
 	private WebElementFacade childBirthVacationRequest;
 
-	public void vacationButton() {
-		vacationbtn.click();
-	}
-
 	public void newRequestButton() {
 		newRequestBtn.click();
 	}
@@ -79,7 +72,7 @@ public class NewVacationRequestPage extends PageObject {
 	public void selectSpecialVacation() {
 		specialVacation.click();
 	}
-	
+
 	public void selectSpecialVacationType() {
 		specialVacationType.click();
 	}
@@ -91,7 +84,5 @@ public class NewVacationRequestPage extends PageObject {
 	public boolean childBirthVacationRequestWasCreated() {
 		return childBirthVacationRequest.isPresent();
 	}
-
-	
 
 }

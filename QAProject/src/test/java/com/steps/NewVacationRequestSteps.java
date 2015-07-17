@@ -12,11 +12,6 @@ public class NewVacationRequestSteps extends ScenarioSteps {
 
 	NewVacationRequestPage newVacationReqPage;
 
-	@Step
-	public void startVacationButton() {
-		newVacationReqPage.vacationButton();
-	}
-
 	public void newRequestButtonClick() {
 		newVacationReqPage.newRequestButton();
 
@@ -40,6 +35,11 @@ public class NewVacationRequestSteps extends ScenarioSteps {
 	@Step
 	public void selectTheSpecialVacationType() {
 		newVacationReqPage.selectSpecialVacationType();
+	}
+
+	@Step
+	public void saveRequest() {
+		newVacationReqPage.save();
 	}
 
 	@Step

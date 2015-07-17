@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.LoginSteps;
 import com.steps.MyFreeDaysSteps;
-import com.steps.NewVacationRequestSteps;
+import com.steps.VacationMenuSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -28,7 +28,7 @@ public class MyFreeDaysTest {
 	public LoginSteps loginSteps;
 
 	@Steps
-	public NewVacationRequestSteps vacationSteps;
+	public VacationMenuSteps vacationSteps;
 
 	@Steps
 	public MyFreeDaysSteps myFreeDaysSteps;

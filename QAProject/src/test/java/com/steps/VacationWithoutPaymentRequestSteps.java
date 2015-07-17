@@ -10,37 +10,41 @@ import net.thucydides.core.steps.ScenarioSteps;
 @SuppressWarnings("serial")
 public class VacationWithoutPaymentRequestSteps extends ScenarioSteps {
 
-	VacationWithoutPaymentRequestPage holidayReqPage;
-	
-	
+	VacationWithoutPaymentRequestPage vacationReqPage;
+
 	@Step
 	public void SelectStartDate() {
-		holidayReqPage.selectStartDate();
+		vacationReqPage.selectStartDate();
 	}
-	
+
 	@Step
 	public void SelectEndDate() {
-		holidayReqPage.selectEndDate();
+		vacationReqPage.selectEndDate();
 	}
-	
-	
+
 	@Step
 	public void selectVacationWithoutPaymentType() {
-		holidayReqPage.selectVacationWithoutPayment();
+		vacationReqPage.selectVacationWithoutPayment();
 	}
-	
+
 	@Step
-	public void saveRequest() {
-		holidayReqPage.save();
+	public void saveTheRequest() {
+		vacationReqPage.save();
 	}
-	
+
+	@Step
+	public void vacationStatusSelect() {
+		vacationReqPage.vacationStatus();
+	}
+
+	@Step
+	public void getTheStatus(String word) {
+		vacationReqPage.search(word);
+	}
+
 	@Step
 	public void checkWithdrawnActionIsPerformed() {
-		Assert.assertTrue("Withdrawn action was not performed!", holidayReqPage.isWithdrawnMessagePresent());
+		Assert.assertTrue("Withdrawn action was not performed!", vacationReqPage.isWithdrawnMessagePresent());
 	}
 
-	
-	
-
-	
 }
