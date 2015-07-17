@@ -4,13 +4,14 @@ import static ch.lambdaj.Lambda.convert;
 
 import java.util.List;
 
+import net.serenitybdd.core.annotations.findby.FindBy;
+import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.pages.PageObject;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import ch.lambdaj.function.convert.Converter;
-import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.WebElementFacade;
-import net.thucydides.core.pages.PageObject;
 
 //@DefaultUrl("http://172.22.4.88:9091/login")
 public class LoginPage extends PageObject {

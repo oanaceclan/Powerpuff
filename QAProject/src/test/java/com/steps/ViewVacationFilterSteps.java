@@ -1,5 +1,7 @@
 package com.steps;
 
+import org.junit.Assert;
+
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
@@ -9,41 +11,42 @@ import com.pages.ViewVacationFilterPage;
 @SuppressWarnings("serial")
 public class ViewVacationFilterSteps extends ScenarioSteps {
 
-	ViewVacationFilterPage viewvacationFilterPage;
+	
+	ViewVacationFilterPage viewVacationFilterPage;
 
 	@Step
-	public void viewvacationbtn() {
-		viewvacationFilterPage.view_vacation_button();
+	public void viewVacationButton() {
+		viewVacationFilterPage.viewVacationButtonClick();
 	}
 	
 	@Step
-	public void vacationType() {
-		viewvacationFilterPage.vacation_type_sick_leave();
+	public void vacationTypeCheck() {
+		viewVacationFilterPage.vacationTypeSickLeaveCheck();
 	}
 	
 	@Step
-	public void daysNumber() {
-		viewvacationFilterPage.days_number();
+	public void daysNumberCheck() {
+		viewVacationFilterPage.daysNumberCheck();
 	}
 	
 	@Step
-	public void vacationStatus() {
-		viewvacationFilterPage.vacation_status();
+	public void vacationStatusCheck() {
+		viewVacationFilterPage.vacationStatusApprovedCheck();
 	}
 	
 	@Step
 	public void lastName(String keyword) {
-		viewvacationFilterPage.last_name(keyword);
+		viewVacationFilterPage.lastNameField(keyword);
 	}
 	
 	@Step
 	public void firstName(String keyword) {
-		viewvacationFilterPage.first_name(keyword);
+		viewVacationFilterPage.firstNameField(keyword);
 	}
 	
 	@Step
-	public void search(String word) {
-		viewvacationFilterPage.search(word);
+	public void searchButtonClick(String word) {
+		viewVacationFilterPage.search(word);
 	}
 	
 	@StepGroup
@@ -52,20 +55,25 @@ public class ViewVacationFilterSteps extends ScenarioSteps {
     	firstName("Oana");
 	
 	}
-	//@Step
+	/*@Step
 	//public void inactiveUsers() {
 		//viewvacationFilterPage.inactive_users();
 	//}*/
 	
 	@Step
 	public void applyButton() {
-		viewvacationFilterPage.applyButton();
+		viewVacationFilterPage.applyButtonClick();
 	}
 	
 	@Step
 	public void cancel()
 	{
-	viewvacationFilterPage.cancel();
+	viewVacationFilterPage.cancelButtonClick();
+	}
+	
+	@Step
+	public void ApplyButton() {
+		Assert.assertTrue("View Vacation button is not present", viewVacationFilterPage.isApplyButtonPresent());
 	}
 	
 }

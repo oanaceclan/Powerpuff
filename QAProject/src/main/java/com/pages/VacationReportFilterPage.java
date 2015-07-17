@@ -4,7 +4,6 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 
-//@DefaultUrl("http://en.wiktionary.org/wiki/Wiktionary:Main_Page")
 public class VacationReportFilterPage extends PageObject {
 
 	@FindBy(css = "[href*='menuItem=vacation-report']")
@@ -17,73 +16,74 @@ public class VacationReportFilterPage extends PageObject {
 	private WebElementFacade exportYear;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_approved")
-	private WebElementFacade approvedbtn;
+	private WebElementFacade approved;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_pending")
-	private WebElementFacade pendingbtn;
+	private WebElementFacade pending;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_CIM")
-	private WebElementFacade cimbtn;
+	private WebElementFacade cim;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_other")
-	private WebElementFacade otherbtn;
+	private WebElementFacade other;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_reportLastName")
-	private WebElementFacade lastname;
+	private WebElementFacade lastnameField;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_reportFirstName")
-	private WebElementFacade firstname;
+	private WebElementFacade firstnameField;
+
+	@FindBy(css = ".aui-button-input-submit")
+	private WebElementFacade searchButton;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_exportButton")
 	private WebElementFacade exportButton;
 
-	public void vacation_report_button() {
+	public void vacationReportButtonClick() {
 		vacationReportButton.click();
 	}
 
-	public void select_month(String text) {
+	public void selectMonthClick(String text) {
 		exportMonth.click();
 		exportMonth.click();
-		//exportMonth.waitUntilVisible();
 		(exportMonth).selectByVisibleText(text);
-		//exportMonth.click();
 	}
 
-	public void select_year(String text) {
+	public void selectYearClick(String text) {
 		(exportYear).selectByVisibleText(text);
 	}
 
-	public void approved() {
-		approvedbtn.click();
+	public void approvedStatusCheck() {
+		approved.click();
 	}
 
-	public void pending() {
-		pendingbtn.click();
+	public void pendingStatusCheck() {
+		pending.click();
 	}
 
-	public void cim() {
-		cimbtn.click();
+	public void cimIncludeCheck() {
+		cim.click();
 	}
 
-	public void other() {
-		otherbtn.click();
+	public void otherIncludeCheck() {
+		other.click();
 	}
 
-	public void last_name(String keyword) {
-		lastname.type(keyword);
+	public void WriteLastNameField(String keyword) {
+		lastnameField.type(keyword);
 	}
 
-	public void first_name(String keyword) {
-		firstname.type(keyword);
+	public void WriteFirstNameField(String keyword) {
+		firstnameField.type(keyword);
 	}
 
-	public void exportButton() {
+	public void searchButtonClick() {
+		searchButton.click();
+	}
+	
+	public void exportButtonClick() {
 		exportButton.waitUntilVisible();
 		exportButton.click();
 	}
-
-	// public boolean isExportButtonPresent() {
-	// return exportButton.isPresent();
-	// }
 
 }

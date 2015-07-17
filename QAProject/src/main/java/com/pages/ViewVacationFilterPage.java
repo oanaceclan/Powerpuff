@@ -6,11 +6,10 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 
-//@DefaultUrl("http://en.wiktionary.org/wiki/Wiktionary:Main_Page")
 public class ViewVacationFilterPage<WebElement> extends PageObject {
 
 	@FindBy(css = "[href*='menuItem=view-vacations']")
-	private WebElementFacade viewVacationButton;
+	private  WebElementFacade viewVacationButton;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_SICK_LEAVECheckbox")
 	private WebElementFacade vacationTypeSickleave;
@@ -19,10 +18,10 @@ public class ViewVacationFilterPage<WebElement> extends PageObject {
 	private WebElementFacade daysNumber;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_APPROVEDCheckbox")
-	private WebElementFacade vacationStatus;
+	private WebElementFacade vacationStatusApproved;
 
-	 //@FindBy(id="_evovacation_WAR_EvoVacationportlet_inactiveUsersCheckbox")
-	 //private WebElementFacade inactiveUsers;
+	// @FindBy(id="_evovacation_WAR_EvoVacationportlet_inactiveUsersCheckbox")
+	// private WebElementFacade inactiveUsers;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_viewVacationsLastName")
 	private WebElementFacade lastname;
@@ -32,59 +31,66 @@ public class ViewVacationFilterPage<WebElement> extends PageObject {
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_applyButton")
 	private WebElementFacade applyButton;
-	
-	@FindBy(id="_evovacation_WAR_EvoVacationportlet_cancelVacationRequest")
+
+	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_cancelVacationRequest")
 	private WebElementFacade cancel;
 
 	@FindBy(css = ".col-9 a")
-	private List<WebElementFacade> status;
+	private List<WebElementFacade> statusColomn;
 
-	public void view_vacation_button() {
+	public void viewVacationButtonClick(){
 		viewVacationButton.click();
 	}
 
-	public void vacation_type_sick_leave() {
+	public void vacationTypeSickLeaveCheck() {
 		vacationTypeSickleave.click();
 	}
 
-	public void days_number() {
+	public void daysNumberCheck() {
 		daysNumber.click();
 	}
 
-	public void vacation_status() {
-		vacationStatus.click();
-	}
+	public void vacationStatusApprovedCheck() {
+		vacationStatusApproved.click(); }
 
-	public void last_name(String keyword) {
+	public void lastNameField(String keyword) {
 		lastname.type(keyword);
 	}
 
-	public void first_name(String keyword) {
+	public void firstNameField(String keyword) {
 		firstname.type(keyword);
 	}
+
 	
-	public void cancel()
-	{
-	cancel.click();
-	}
 
 	/*
-	 * public void inactive_users() { inactiveUsers.click(); }
+	 * public void inactiveUsersCheck() { inactiveUsers.click(); }
 	 */
 
-	public void applyButton() {
+	public void applyButtonClick() {
 		applyButton.click();
+	}
+	
+	public void cancelButtonClick() {
+		cancel.click();
 	}
 
 	public void search(String word) {
-		for (int i = 1; i < status.size(); i++) {
-			if (status.get(i).getText().toLowerCase().contains(word.toLowerCase()));
+		for (int i = 1; i < statusColomn.size(); i++) {
+			if (statusColomn.get(i).getText().toLowerCase()
+					.contains(word.toLowerCase()))
+				;
 			{
-				System.out.println(status.get(i).getText());
-				status.get(i).click();
-				
+				System.out.println(statusColomn.get(i).getText());
+				statusColomn.get(i).click();
+
 			}
 		}
-	
+
 	}
+
+	public boolean isApplyButtonPresent() {
+		
+		return applyButton.isPresent();
+}
 }

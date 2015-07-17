@@ -14,12 +14,12 @@ public class VacationReportSteps extends ScenarioSteps {
 	VacationReportPage vacationReportPage;
 
 	@Step
-	public void vacationReportbtn() {
-		vacationReportPage.vacation_report_button();
+	public void vacationReportButtonClick() {
+		vacationReportPage.vacationReportButtonClick();
 	}
 
 	@Step
-	public void ExportButton() {
+	public void ExportButtonClick() {
 		Assert.assertTrue("Vacation Report button is not present",vacationReportPage.isExportButtonPresent());
 	}
 }

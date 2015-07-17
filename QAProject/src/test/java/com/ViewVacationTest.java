@@ -1,25 +1,27 @@
 package com;
 
-import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
+
+import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
-import net.thucydides.junit.annotations.UseTestDataFrom;
-import tools.Constants;
+
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.steps.LoginSteps;
+import tools.Constants;
 
-@RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom("/Resources/data.csv")
-public class LoginTest {
-	
-	String username, password;
-	
+import com.steps.LoginSteps;
+import com.steps.VacationMenuSteps;
+import com.steps.ViewVacationSteps;
+
+
+@RunWith(SerenityRunner.class)
+public class ViewVacationTest {
+
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -27,22 +29,23 @@ public class LoginTest {
 	public Pages pages;
 
 	@Steps
+	public ViewVacationSteps viewvacationSteps;
+
+
+	@Steps
+	public VacationMenuSteps vacationMenuSteps;
+
+	@Steps
 	public LoginSteps loginSteps;
 
 	@Test
-	public void verifyLoginWithValidCredentials() {
+	public void checkIfThereIsAViewVacationsButton() {
 		loginSteps.openLoginPage();
 		loginSteps.EnterUsername(Constants.DMUserName);
 		loginSteps.EnterPassword(Constants.DMPassWord);
 		loginSteps.signInButtonClick();
-		loginSteps.checkLoginIsPerformed();
+		vacationMenuSteps.startVacationButton();
+		viewvacationSteps.viewVacationButton();
+		viewvacationSteps.ApplyButton();
 	}
-
-//	@Test
-//	public void verifyLoginWithInvalidCredentials() {
-//		loginSteps.loginWith(Constants.UserName, Constants.WrongPassWord);
-//		loginSteps.shouldSeeErrorMessage(Constants.ErrorMessage1);
-//		loginSteps.shouldSeeErrorMessage(Constants.ErrorMessage1);
-//	}
-
 }

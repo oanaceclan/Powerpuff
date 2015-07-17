@@ -15,14 +15,16 @@ public class ViewVacationSteps extends ScenarioSteps {
 	ViewVacationPage viewvacationPage;
 
 	@Step
-	public void viewvacationbtn() {
-		viewvacationPage.view_vacation_button();
+	public void viewVacationButton() {
+		viewvacationPage.viewVacationButtonClick();
 	}
 
 	@Step
 	public void ApplyButton() {
 		Assert.assertTrue("View Vacation button is not present", viewvacationPage.isApplyButtonPresent());
 	}
+	
+
 }
 	
 	

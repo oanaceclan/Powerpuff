@@ -12,73 +12,70 @@ public class VacationReportFilterSteps extends ScenarioSteps {
 	VacationReportFilterPage vacationReportFilterPage;
 
 	@Step
-	public void vacationReportButton() {
-		vacationReportFilterPage.vacation_report_button();
+	public void vacationReportButtonClick() {
+		vacationReportFilterPage.vacationReportButtonClick();
 	}
 
 	@Step
-	public void exportMonth(String text) {
-		vacationReportFilterPage.select_month(text);
+	public void exportMonthCheck(String text) {
+		vacationReportFilterPage.selectMonthClick(text);
 	}
 
 	@Step
-	public void exportYear(String text) {
-		vacationReportFilterPage.select_year(text);
+	public void exportYearCheck(String text) {
+		vacationReportFilterPage.selectYearClick(text);
 	}
 
 	@Step
-	public void approved() {
-		vacationReportFilterPage.approved();
-	}
-	
-	@Step
-	public void cim() {
-		vacationReportFilterPage.cim();
-	}
-	
-	@Step
-	public void other() {
-		vacationReportFilterPage.other();
+	public void approvedStatusCheck() {
+		vacationReportFilterPage.approvedStatusCheck();
 	}
 
 	@Step
-	public void pending() {
-		vacationReportFilterPage.pending();
+	public void cimIncludeCheck() {
+		vacationReportFilterPage.cimIncludeCheck();
 	}
 
 	@Step
-	public void lastName(String keyword) {
-		vacationReportFilterPage.last_name(keyword);
+	public void otherIncludeCheck() {
+		vacationReportFilterPage.otherIncludeCheck();
 	}
 
 	@Step
-	public void firstName(String keyword) {
-		vacationReportFilterPage.first_name(keyword);
+	public void pendingStatusCheck() {
+		vacationReportFilterPage.pendingStatusCheck();
 	}
-	
+
+	@Step
+	public void lastNameField(String keyword) {
+		vacationReportFilterPage.WriteLastNameField(keyword);
+	}
+
+	@Step
+	public void firstNameField(String keyword) {
+		vacationReportFilterPage.WriteFirstNameField(keyword);
+	}
+
 	@StepGroup
 	public void loginWith(String lastName, String firstName) {
-		lastName("Ceclan");
-		firstName("Oana");
+		lastNameField("Ceclan");
+		firstNameField("Oana");
 
 	}
 	
+	@Step
+	public void SearchButton() {
+		vacationReportFilterPage.searchButtonClick();
+	}
+
 	/*
 	 * @Step public void search(String word) {
 	 * viewvacationFilterPage.search(word); }
 	 */
-	
-	
 
-	
-	
 	@Step
 	public void ExportButton() {
-		vacationReportFilterPage.exportButton();
+		vacationReportFilterPage.exportButtonClick();
 	}
 
-	
-	/*  @Step public void ExportButton() {
-	  Assert.assertTrue("Vacation Report button is not present",vacationReportPage.isExportButtonPresent()); }
-	*/
 }

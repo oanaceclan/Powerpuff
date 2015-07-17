@@ -4,29 +4,27 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 
-//@DefaultUrl("http://en.wiktionary.org/wiki/Wiktionary:Main_Page")
 public class VacationReportPage extends PageObject {
-	
-	
-	@FindBy (css="[href*='menuItem=vacation-report']")
+
+	@FindBy(css = "[href*='menuItem=vacation-report']")
 	private WebElementFacade vacationReportButton;
-	
-	@FindBy (id="_evovacation_WAR_EvoVacationportlet_exportButton")
+
+	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_exportButton")
 	private WebElementFacade exportButton;
-	
-	
-	public void vacation_report_button(){
+
+	public void vacationReportButtonClick() {
 		vacationReportButton.click();
 	}
 	
-	public void applyButton() {
+	
+
+	public void exportButtonClick() {
 		exportButton.waitUntilVisible();
 		exportButton.click();
 	}
-	
+
 	public boolean isExportButtonPresent() {
 		return exportButton.isPresent();
 	}
-
 
 }
