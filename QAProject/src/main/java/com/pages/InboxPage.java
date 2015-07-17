@@ -14,6 +14,18 @@ public class InboxPage extends PageObject {
 	@FindBy (css="[href*='menuItem=inbox']")
 	private WebElementFacade inboxButton;
 	
+	//@FindBy (css="[name='_evovacation_WAR_EvoVacationportlet_allRowIds']")
+	//private WebElementFacade checkAllRows;
+	
+	@FindBy (css="[name='_evovacation_WAR_EvoVacationportlet_rowIds']")
+	private WebElementFacade checkFirstRow;
+	
+	@FindBy (id="_evovacation_WAR_EvoVacationportlet_multipleApproveButton")
+	private WebElementFacade approveButton;
+	
+	@FindBy (id="_evovacation_WAR_EvoVacationportlet_multipleRejectButton")
+	private WebElementFacade rejectButton;
+	
 	public void vacationButtonClick() {
 		vacationButton.click();
 	}
@@ -22,5 +34,20 @@ public class InboxPage extends PageObject {
 		inboxButton.click();
 	}
 	
+	//public void checkAllRows(){
+		//checkAllRows.click();
+	//}
+	
+	public void checkFirstRow(){
+		checkFirstRow.click();
+	}
+	
+	public void clickApproveButton(){
+		approveButton.click();
+	}
+	
+	//public void clickRejectButton(){
+		//rejectButton.click();
+	//}
 	
 }

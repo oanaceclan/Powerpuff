@@ -22,6 +22,25 @@ public class InboxSteps extends ScenarioSteps {
 		inboxPage.inboxButtonClick();
 	}
 	
+	//@Step
+	//public void checkAllRows() {
+		//inboxPage.checkAllRows();
+	//}
+	
+	@Step
+	public void checkFirstRow() {
+		inboxPage.checkFirstRow();
+	}
+	
+	@Step
+	public void approveButton() {
+		inboxPage.clickApproveButton();
+	}
+	
+	//@Step
+	//public void rejectButton() {
+		//inboxPage.clickRejectButton();
+	//}
 
 	@Step
 	public void clickInboxButton() {

@@ -33,7 +33,7 @@ public class InboxTest {
 	
 	@Steps
 	public VacationMenuSteps vacationSteps;
-
+	
 	@Test
 	public void checkIfThereIsAnInboxButton() {
 		loginSteps.openLoginPage();
@@ -42,6 +42,10 @@ public class InboxTest {
 		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
 		inboxSteps.startInboxButton();
+		//inboxSteps.checkAllRows();
+		inboxSteps.checkFirstRow();
+		inboxSteps.approveButton();
+		//inboxSteps.rejectButton();
 		inboxSteps.checkInboxButtonIsPressed();
     }
 }
