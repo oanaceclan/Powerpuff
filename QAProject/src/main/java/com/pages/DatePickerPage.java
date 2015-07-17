@@ -23,7 +23,7 @@ public class DatePickerPage extends PageObject {
 	@FindBy(css = "div[style*='display: block'] table[class='dp_daypicker'] td:not(.dp_not_in_month)")
 	private List<WebElement> daysInMonth;
 
-	public void choose_the_start_date(int day, String month, int year) {
+	public void chooseTheStartDate(int day, String month, int year) {
 		String monthAndYear = month + ", " + year;
 		startDatelocator.click();
 		WebElement date = monthAndYearFromStartDate.findElement(By.cssSelector("td[class='dp_caption']"));
@@ -53,7 +53,7 @@ public class DatePickerPage extends PageObject {
 
 	}
 
-	public void choose_the_end_date(int day, String month, int year) {
+	public void chooseTheEndDate(int day, String month, int year) {
 		String monthAndYear = month + ", " + year;
 		endDateLocator.click();
 		WebElement date = monthAndYearFromStartDate.findElement(By.cssSelector("td[class='dp_caption']"));
