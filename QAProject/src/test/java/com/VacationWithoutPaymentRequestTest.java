@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import com.steps.LoginSteps;
 import com.steps.MyRequestsFilterSteps;
 import com.steps.NewVacationRequestSteps;
+import com.steps.VacationMenuSteps;
 import com.steps.VacationWithoutPaymentRequestSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -29,7 +30,7 @@ public class VacationWithoutPaymentRequestTest {
 	public LoginSteps loginSteps;
 
 	@Steps
-	public NewVacationRequestSteps vacationSteps;
+    public VacationMenuSteps vacationSteps;
 
 	@Steps
 	public VacationWithoutPaymentRequestSteps vacationRequestSteps;
@@ -37,6 +38,8 @@ public class VacationWithoutPaymentRequestTest {
 	@Steps
 	public MyRequestsFilterSteps myReqSteps;
 	
+	@Steps
+	public NewVacationRequestSteps newVacationRequestSteps;
 
 	@Test
 	public void checkIfTheWithdrawnActionForVacationWithoutPaymentRequestIsPerformed() {
@@ -45,17 +48,17 @@ public class VacationWithoutPaymentRequestTest {
 		loginSteps.EnterPassword(Constants.PassWord);
 		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
-		vacationSteps.newRequestButtonClick();
+		newVacationRequestSteps.newRequestButtonClick();
 		vacationRequestSteps.SelectStartDate();
 		vacationRequestSteps.SelectEndDate();
 		vacationRequestSteps.selectVacationWithoutPaymentType();
-		vacationRequestSteps.saveRequest();
+		vacationRequestSteps.saveTheRequest();
 		myReqSteps.myRequestsButtonClick();
 		myReqSteps.vacationTypeSelect();
 		myReqSteps.daysNumberSelect();
-		myReqSteps.vacationStatusSelect();
+		vacationRequestSteps.vacationStatusSelect();
 		myReqSteps.applyButtonClick();
-		myReqSteps.getStatus(Constants.Status);
+		vacationRequestSteps.getTheStatus(Constants.Status);
 		myReqSteps.clickOnCancelButton();
 		vacationRequestSteps.checkWithdrawnActionIsPerformed();
 

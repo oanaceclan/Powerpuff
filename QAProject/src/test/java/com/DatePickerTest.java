@@ -15,6 +15,7 @@ import org.openqa.selenium.WebDriver;
 import com.steps.DatePickerSteps;
 import com.steps.LoginSteps;
 import com.steps.NewVacationRequestSteps;
+import com.steps.VacationMenuSteps;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom("/Resources/data2.csv")
@@ -35,7 +36,10 @@ public class DatePickerTest {
 	public DatePickerSteps datePickerSteps;
 	
 	@Steps
-	public NewVacationRequestSteps vacationSteps;
+	public VacationMenuSteps vacationSteps;
+	
+	@Steps
+	public NewVacationRequestSteps newVacationRequestSteps;
 	
 	@Test
 	public void chooseTheStartDateAndTheEndDate() {
@@ -44,7 +48,7 @@ public class DatePickerTest {
 		loginSteps.EnterPassword(Constants.PassWord);
 		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
-		vacationSteps.newRequestButtonClick();
+		newVacationRequestSteps.newRequestButtonClick();
 		datePickerSteps.selectStartDate(Constants.StartDate, Constants.MonthForStartDate, Constants.YearForStartDate);
 		datePickerSteps.selectEndDate(Constants.EndDate, Constants.MonthForEndDate, Constants.YearForEndDate);
 	}
