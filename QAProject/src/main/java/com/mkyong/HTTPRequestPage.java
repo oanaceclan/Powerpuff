@@ -19,8 +19,8 @@ public class HTTPRequestPage {
 		System.out.println("Testing 1 - Send Http GET request");
 		http.sendGet();
  
-		System.out.println("\nTesting 2 - Send Http POST request");
-		http.sendPost();
+		/*System.out.println("\nTesting 2 - Send Http POST request");
+		http.sendPost();*/
  
 	}
  
@@ -58,7 +58,7 @@ public class HTTPRequestPage {
 	}
  
 	// HTTP POST request
-	private void sendPost() throws Exception {
+	/*private void sendPost() throws Exception {
  
 		String url = "http://google-gruyere.appspot.com/818447077559/";
 		URL obj = new URL(url);
@@ -96,6 +96,6 @@ public class HTTPRequestPage {
 		//print result
 		System.out.println(response.toString());
  
-	}
+	}*/
  
 }

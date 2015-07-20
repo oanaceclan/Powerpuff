@@ -1,6 +1,7 @@
 package com;
 
 import org.junit.Test;
+
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
@@ -8,18 +9,17 @@ import com.steps.LoginSteps;
 import com.steps.VacationMenuSteps;
 import com.steps.ViewVacationFilterSteps;
 
-import net.serenitybdd.junit.runners.SerenityRunner;
+import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
+import net.thucydides.junit.annotations.UseTestDataFrom;
+//github.com/oanaceclan/Powerpuff.git
 import tools.Constants;
 
-
-//@RunWith(SerenityParameterizedRunner.class)
-//@UseTestDataFrom("/Resources/vacations.csv")
-
-@RunWith(SerenityRunner.class)
+@RunWith(SerenityParameterizedRunner.class)
+@UseTestDataFrom("/Resources/dataTypes.csv")
 public class ViewVacationFilterTest {
 
 	String VacationType, DaysNumber, VacationStatus;
@@ -32,6 +32,8 @@ public class ViewVacationFilterTest {
 
 	@Steps
 	public LoginSteps loginSteps;
+
+	String type;
 
 	@Steps
 	public VacationMenuSteps vacationSteps;
@@ -61,6 +63,27 @@ public class ViewVacationFilterTest {
 		viewvacationFilterSteps.searchButtonClick("sick");
 		viewvacationFilterSteps.cancel();
 
+		loginSteps.openLoginPage();
+		loginSteps.EnterUsername(Constants.DMUserName);
+		loginSteps.EnterPassword(Constants.DMPassWord);
+		loginSteps.signInButtonClick();
+		vacationSteps.startVacationButton();
+		viewvacationFilterSteps.viewVacationButton();
+		viewvacationFilterSteps.selectVacationType(VacationType);
+		viewvacationFilterSteps.selectDaysNumber(DaysNumber);
+		viewvacationFilterSteps.selectVacationStatus(VacationStatus);
+
+		/*
+		 * viewvacationFilterSteps.vacationTypeCheck();
+		 * viewvacationFilterSteps.daysNumberCheck();
+		 * viewvacationFilterSteps.vacationStatusCheck();
+		 * viewvacationFilterSteps.firstName("Oana");
+		 * viewvacationFilterSteps.lastName("Ceclan");
+		 * //viewvacationFilterSteps.inactiveUsers();
+		 * viewvacationFilterSteps.applyButton();
+		 * viewvacationFilterSteps.searchButtonClick("sick");
+		 * viewvacationFilterSteps.cancel();
+		 */
 	}
 
 }
