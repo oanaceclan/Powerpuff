@@ -38,11 +38,5 @@ public class LoginTest {
 		loginSteps.checkLoginIsPerformed();
 	}
 
-//	@Test
-//	public void verifyLoginWithInvalidCredentials() {
-//		loginSteps.loginWith(Constants.UserName, Constants.WrongPassWord);
-//		loginSteps.shouldSeeErrorMessage(Constants.ErrorMessage1);
-//		loginSteps.shouldSeeErrorMessage(Constants.ErrorMessage1);
-//	}
 
 }
