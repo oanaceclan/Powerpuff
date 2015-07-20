@@ -8,8 +8,9 @@ import net.thucydides.core.pages.PageObject;
 
 public class ViewVacationFilterPage<WebElement> extends PageObject {
 
+
 	@FindBy(css = "[href*='menuItem=view-vacations']")
-	private  WebElementFacade viewVacationButton;
+	private WebElementFacade viewVacationButton;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_SICK_LEAVECheckbox")
 	private WebElementFacade vacationTypeSickleave;
@@ -38,7 +39,16 @@ public class ViewVacationFilterPage<WebElement> extends PageObject {
 	@FindBy(css = ".col-9 a")
 	private List<WebElementFacade> statusColomn;
 
-	public void viewVacationButtonClick(){
+	@FindBy(css = "div[class*='aui-column column-three aui-column-first '] label")
+	private List<WebElementFacade> vacationTypeList;
+	
+	@FindBy(css = "div[class='aui-column column-three column-center '] label")
+	private List<WebElementFacade> daysNumberList;
+	
+	@FindBy(css = "div[class='aui-column-content aui-column-content-last column-three-content column-center-content '] label")
+	private List<WebElementFacade> vacationStatusList;
+
+	public void viewVacationButtonClick() {
 		viewVacationButton.click();
 	}
 
@@ -51,7 +61,8 @@ public class ViewVacationFilterPage<WebElement> extends PageObject {
 	}
 
 	public void vacationStatusApprovedCheck() {
-		vacationStatusApproved.click(); }
+		vacationStatusApproved.click();
+	}
 
 	public void lastNameField(String keyword) {
 		lastname.type(keyword);
@@ -61,8 +72,6 @@ public class ViewVacationFilterPage<WebElement> extends PageObject {
 		firstname.type(keyword);
 	}
 
-	
-
 	/*
 	 * public void inactiveUsersCheck() { inactiveUsers.click(); }
 	 */
@@ -70,7 +79,7 @@ public class ViewVacationFilterPage<WebElement> extends PageObject {
 	public void applyButtonClick() {
 		applyButton.click();
 	}
-	
+
 	public void cancelButtonClick() {
 		cancel.click();
 	}
@@ -90,7 +99,36 @@ public class ViewVacationFilterPage<WebElement> extends PageObject {
 	}
 
 	public boolean isApplyButtonPresent() {
-		
+
 		return applyButton.isPresent();
+	}
+
+	public void selectVacationType(String type) {
+		for (WebElementFacade option : vacationTypeList) {
+			if (option.getText().contains(type)) {
+				option.click();
+				break;
+			}
+
+		}
+
+	}
+	public void selectDaysNumber(String type) {
+		for (WebElementFacade option : daysNumberList) {
+			if (option.getText().contains(type)) {
+				option.click();
+				break;
+			}
+
+		}
+
+	}
+	public void selectVacationStatus(String type) {
+		for (WebElementFacade option : vacationStatusList) {
+			if (option.getText().contains(type)) {
+				option.click();
+				break;
 }
+		}
+	}
 }
