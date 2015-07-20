@@ -1,4 +1,4 @@
-package com.steps;
+package com.test;
 
 
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -6,6 +6,8 @@ import net.thucydides.core.annotations.Steps;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import com.steps.GruyereSteps;
 
 @RunWith(SerenityRunner.class)
 public class GruyereTest {
