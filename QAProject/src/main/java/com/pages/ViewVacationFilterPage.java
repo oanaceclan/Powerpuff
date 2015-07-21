@@ -12,14 +12,14 @@ public class ViewVacationFilterPage<WebElement> extends PageObject {
 	@FindBy(css = "[href*='menuItem=view-vacations']")
 	private WebElementFacade viewVacationButton;
 
-	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_SICK_LEAVECheckbox")
-	private WebElementFacade vacationTypeSickleave;
-
-	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_FIFTHCheckbox")
-	private WebElementFacade daysNumber;
-
-	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_APPROVEDCheckbox")
-	private WebElementFacade vacationStatusApproved;
+//	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_SICK_LEAVECheckbox")
+//	private WebElementFacade vacationTypeSickleave;
+//
+//	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_FIFTHCheckbox")
+//	private WebElementFacade daysNumber;
+//
+//	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_APPROVEDCheckbox")
+//	private WebElementFacade vacationStatusApproved;
 
 	// @FindBy(id="_evovacation_WAR_EvoVacationportlet_inactiveUsersCheckbox")
 	// private WebElementFacade inactiveUsers;
@@ -35,10 +35,7 @@ public class ViewVacationFilterPage<WebElement> extends PageObject {
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_cancelVacationRequest")
 	private WebElementFacade cancel;
-
-	@FindBy(css = ".col-9 a")
-	private List<WebElementFacade> statusColomn;
-
+	
 	@FindBy(css = "div[class*='aui-column column-three aui-column-first '] label")
 	private List<WebElementFacade> vacationTypeList;
 	
@@ -47,22 +44,25 @@ public class ViewVacationFilterPage<WebElement> extends PageObject {
 	
 	@FindBy(css = "div[class='aui-column-content aui-column-content-last column-three-content column-center-content '] label")
 	private List<WebElementFacade> vacationStatusList;
+	
+	@FindBy(css = ".col-9 a")
+	private List<WebElementFacade> statusColomn;
 
 	public void viewVacationButtonClick() {
 		viewVacationButton.click();
 	}
 
-	public void vacationTypeSickLeaveCheck() {
-		vacationTypeSickleave.click();
-	}
-
-	public void daysNumberCheck() {
-		daysNumber.click();
-	}
-
-	public void vacationStatusApprovedCheck() {
-		vacationStatusApproved.click();
-	}
+//	public void vacationTypeSickLeaveCheck() {
+//		vacationTypeSickleave.click();
+//	}
+//
+//	public void daysNumberCheck() {
+//		daysNumber.click();
+//	}
+//
+//	public void vacationStatusApprovedCheck() {
+//		vacationStatusApproved.click();
+//	}
 
 	public void lastNameField(String keyword) {
 		lastname.type(keyword);

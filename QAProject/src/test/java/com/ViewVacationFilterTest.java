@@ -52,16 +52,16 @@ public class ViewVacationFilterTest {
     	viewvacationFilterSteps.selectVacationType(VacationType);
     	viewvacationFilterSteps.selectDaysNumber(DaysNumber);
     	viewvacationFilterSteps.selectVacationStatus(VacationStatus);
+    	viewvacationFilterSteps.firstName("Oana");
+    	viewvacationFilterSteps.lastName("Ceclan");
+    	viewvacationFilterSteps.applyButton();
+    	viewvacationFilterSteps.searchButtonClick("sick");
+    	viewvacationFilterSteps.cancel();
     	
     	/*viewvacationFilterSteps.vacationTypeCheck();
     	viewvacationFilterSteps.daysNumberCheck();
     	viewvacationFilterSteps.vacationStatusCheck();
-    	viewvacationFilterSteps.firstName("Oana");
-    	viewvacationFilterSteps.lastName("Ceclan");
     	//viewvacationFilterSteps.inactiveUsers();
-    	viewvacationFilterSteps.applyButton();
-    	viewvacationFilterSteps.searchButtonClick("sick");
-    	viewvacationFilterSteps.cancel();
     	*/
     }
     	

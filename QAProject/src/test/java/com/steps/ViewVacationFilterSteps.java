@@ -19,20 +19,20 @@ public class ViewVacationFilterSteps extends ScenarioSteps {
 		viewVacationFilterPage.viewVacationButtonClick();
 	}
 	
-	@Step
-	public void vacationTypeCheck() {
-		viewVacationFilterPage.vacationTypeSickLeaveCheck();
-	}
-	
-	@Step
-	public void daysNumberCheck() {
-		viewVacationFilterPage.daysNumberCheck();
-	}
-	
-	@Step
-	public void vacationStatusCheck() {
-		viewVacationFilterPage.vacationStatusApprovedCheck();
-	}
+//	@Step
+//	public void vacationTypeCheck() {
+//		viewVacationFilterPage.vacationTypeSickLeaveCheck();
+//	}
+//	
+//	@Step
+//	public void daysNumberCheck() {
+//		viewVacationFilterPage.daysNumberCheck();
+//	}
+//	
+//	@Step
+//	public void vacationStatusCheck() {
+//		viewVacationFilterPage.vacationStatusApprovedCheck();
+//	}
 	
 	@Step
 	public void lastName(String keyword) {
