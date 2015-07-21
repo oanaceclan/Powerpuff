@@ -6,25 +6,14 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 
-import org.openqa.selenium.WebElement;
-
 //@DefaultUrl("http://en.wiktionary.org/wiki/Wiktionary:Main_Page")
-public class MyRequestsFilterPage extends PageObject {
+public class MyRequestsFilterPage<WebElement> extends PageObject {
 
 	@FindBy(css = "[href='http://172.22.4.88:9091/vacation']")
 	private WebElementFacade vacationbtn;
 
 	@FindBy(css = "[href*='menuItem=my-requests']")
 	private WebElementFacade myRequestsButton;
-
-	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_VACATION_WITHOUT_PAYMENTCheckbox")
-	private WebElementFacade vacationWithoutPaymentBtn;
-
-	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_FIFTHCheckbox")
-	private WebElementFacade daysNumber;
-
-	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_WITHDRAWNCheckbox")
-	private WebElementFacade vacationStatus;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_applyButton")
 	private WebElementFacade applyButton;
@@ -36,33 +25,22 @@ public class MyRequestsFilterPage extends PageObject {
 	private WebElementFacade cancel;
 
 	@FindBy(css = ".col-6 a")
-	private List<WebElement> status;
+	private List<WebElementFacade> status;
 
 	@FindBy(css = "div > div.view-vacation > div.aui-column.aui-w70.vacation-info-column.aui-column-first > div > table > tbody > tr:nth-child(2) > td:nth-child(1) > div > b")
 	private WebElementFacade vacationStatusAfterWithdrawn;
 
+	@FindBy(css = "[class='aui-column-content aui-column-content-first column-three-content '] label")
+	private List<WebElementFacade> vacationType;
+
+	@FindBy(css = "[class='aui-column-content column-three-content column-center-content '] label")
+	private List<WebElementFacade> daysNumber;
+
+	@FindBy(css = "[class='aui-column column-three column-center aui-column-last'] label")
+	private List<WebElementFacade> vacationStatus;
+
 	public void myRequestsButton() {
 		myRequestsButton.click();
-	}
-
-	public void vacationWithoutPaymentButton() {
-		vacationWithoutPaymentBtn.click();
-	}
-
-	public void daysNumber() {
-		daysNumber.click();
-	}
-
-	public void vacationStatus() {
-		vacationStatus.click();
-	}
-
-	public void applyButton() {
-		applyButton.click();
-	}
-
-	public void cancelBtn() {
-		cancel.click();
 	}
 
 	public void search(String word) {
@@ -76,6 +54,45 @@ public class MyRequestsFilterPage extends PageObject {
 			}
 		}
 
+	}
+
+	public void vacationTypeSelect(String type) {
+		for (WebElementFacade option : vacationType) {
+			if (option.getText().contains(type)) {
+				option.click();
+				break;
+			}
+
+		}
+
+	}
+
+	public void daysNumberSelect(String type) {
+		for (WebElementFacade option : daysNumber) {
+			if (option.getText().contains(type)) {
+				option.click();
+				break;
+			}
+
+		}
+
+	}
+
+	public void vacationStatusSelect(String type) {
+		for (WebElementFacade option : vacationStatus) {
+			if (option.getText().contains(type)) {
+				option.click();
+				break;
+			}
+		}
+	}
+
+	public void applyButton() {
+		applyButton.click();
+	}
+
+	public void cancelBtn() {
+		cancel.click();
 	}
 
 	public boolean isWithdrawnStatusPresent() {

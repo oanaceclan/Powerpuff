@@ -32,10 +32,10 @@ public class VacationWithoutPaymentRequestSteps extends ScenarioSteps {
 		vacationReqPage.save();
 	}
 
-	@Step
-	public void vacationStatusSelect() {
-		vacationReqPage.vacationStatus();
-	}
+//	@Step
+//	public void vacationStatusSelect() {
+//		vacationReqPage.vacationStatus();
+//	}
 
 	@Step
 	public void getTheStatus(String word) {

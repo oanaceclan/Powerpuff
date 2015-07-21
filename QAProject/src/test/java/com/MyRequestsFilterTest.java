@@ -8,15 +8,19 @@ import com.steps.LoginSteps;
 import com.steps.MyRequestsFilterSteps;
 import com.steps.VacationMenuSteps;
 
-import net.serenitybdd.junit.runners.SerenityRunner;
+import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
+import net.thucydides.junit.annotations.UseTestDataFrom;
 import tools.Constants;
 
-@RunWith(SerenityRunner.class)
+@RunWith(SerenityParameterizedRunner.class)
+@UseTestDataFrom("/Resources/dataFilter.csv")
 public class MyRequestsFilterTest {
+
+	String VacationType, DaysNumber, VacationStatus;
 
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
@@ -41,9 +45,9 @@ public class MyRequestsFilterTest {
 		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
 		myReqSteps.myRequestsButtonClick();
-		myReqSteps.vacationTypeSelect();
-		myReqSteps.daysNumberSelect();
-		myReqSteps.vacationStatusSelect();
+		myReqSteps.selectVacationType(VacationType);
+		myReqSteps.selectDaysNumber(DaysNumber);
+		myReqSteps.selectVacationStatus(VacationStatus);
 		myReqSteps.applyButtonClick();
 		myReqSteps.getStatus(Constants.Status2);
 		myReqSteps.checkWithdrawnStatusIsPresent();
