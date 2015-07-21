@@ -14,6 +14,18 @@ public class InboxPage extends PageObject {
 	@FindBy (css="[href*='menuItem=inbox']")
 	private WebElementFacade inboxButton;
 	
+	@FindBy (css="a[href*='assignToTab=assignedToOthers'] ")
+	 private WebElementFacade assignedToMe;
+	
+	public boolean isInboxButtonPresent() {
+		return inboxButton.isPresent();
+	}
+	
+	public boolean isInboxButtonAssignedToOthersPresent() {
+		return assignedToMe.isPresent();
+	}
+	
+	
 	//@FindBy (css="[name='_evovacation_WAR_EvoVacationportlet_allRowIds']")
 	//private WebElementFacade checkAllRows;
 	

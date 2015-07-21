@@ -55,6 +55,7 @@ public class VacationReportFilterTest {
 		vacationReportFilterSteps.firstNameField("Oana");
 		vacationReportFilterSteps.lastNameField("Ceclan");
 		vacationReportFilterSteps.SearchButton();
+		vacationReportFilterSteps.ExportButton();
 	}
 
 }

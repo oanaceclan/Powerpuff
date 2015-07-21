@@ -44,11 +44,11 @@ public class InboxSteps extends ScenarioSteps {
 
 	@Step
 	public void clickInboxButton() {
-		Assert.assertTrue("Inbox button is not present", inboxhomepage.isInboxButtonPresent());
+		Assert.assertTrue("Inbox button is not present", inboxPage.isInboxButtonPresent());
 	}
 	
 	@Step
 	public void checkInboxButtonIsPressed() {
-		Assert.assertTrue("Assigned to others is not present", inboxhomepage.isInboxButtonAssignedToOthersPresent());
+		Assert.assertTrue("Assigned to others is not present", inboxPage.isInboxButtonAssignedToOthersPresent());
 	}
 }

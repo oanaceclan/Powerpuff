@@ -47,8 +47,8 @@ public class VacationWithoutPaymentRequestPage extends PageObject {
 	@FindBy(css = ".col-6 a")
 	private List<WebElement> status;
 
-	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_PENDINGCheckbox")
-	private WebElementFacade vacationStatus;
+//	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_PENDINGCheckbox")
+//	private WebElementFacade vacationStatus;
 
 	public void selectStartDate() {
 		startDatePicker.click();
@@ -76,9 +76,9 @@ public class VacationWithoutPaymentRequestPage extends PageObject {
 		return messageAfterWithdrawn.isPresent();
 	}
 
-	public void vacationStatus() {
-		vacationStatus.click();
-	}
+//	public void vacationStatus() {
+//		vacationStatus.click();
+//	}
 
 	public void search(String word) {
 		for (int i = 1; i < status.size(); i++) {

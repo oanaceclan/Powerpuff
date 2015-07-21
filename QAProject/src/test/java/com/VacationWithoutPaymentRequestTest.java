@@ -10,16 +10,20 @@ import com.steps.NewVacationRequestSteps;
 import com.steps.VacationMenuSteps;
 import com.steps.VacationWithoutPaymentRequestSteps;
 
-import net.serenitybdd.junit.runners.SerenityRunner;
+import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
+import net.thucydides.junit.annotations.UseTestDataFrom;
 import tools.Constants;
 
-@RunWith(SerenityRunner.class)
+@RunWith(SerenityParameterizedRunner.class)
+@UseTestDataFrom("/Resources/dataFilter2.csv")
 public class VacationWithoutPaymentRequestTest {
 
+	String VacationType, DaysNumber, VacationStatus;
+	
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 
@@ -54,9 +58,9 @@ public class VacationWithoutPaymentRequestTest {
 		vacationRequestSteps.selectVacationWithoutPaymentType();
 		vacationRequestSteps.saveTheRequest();
 		myReqSteps.myRequestsButtonClick();
-		myReqSteps.vacationTypeSelect();
-		myReqSteps.daysNumberSelect();
-		vacationRequestSteps.vacationStatusSelect();
+		myReqSteps.selectVacationType(VacationType);
+		myReqSteps.selectDaysNumber(DaysNumber);
+		myReqSteps.selectVacationStatus(VacationStatus);
 		myReqSteps.applyButtonClick();
 		vacationRequestSteps.getTheStatus(Constants.Status);
 		myReqSteps.clickOnCancelButton();

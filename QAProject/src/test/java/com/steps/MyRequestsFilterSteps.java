@@ -10,6 +10,7 @@ import net.thucydides.core.steps.ScenarioSteps;
 @SuppressWarnings("serial")
 public class MyRequestsFilterSteps extends ScenarioSteps {
 
+	@SuppressWarnings("rawtypes")
 	MyRequestsFilterPage myVacationRequests;
 
 	@Step
@@ -18,20 +19,21 @@ public class MyRequestsFilterSteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void vacationTypeSelect() {
-		myVacationRequests.vacationWithoutPaymentButton();
+	public void selectVacationType(String type) {
+		myVacationRequests.vacationTypeSelect(type);
 	}
 
 	@Step
-	public void daysNumberSelect() {
-		myVacationRequests.daysNumber();
+	public void selectDaysNumber(String type) {
+		myVacationRequests.daysNumberSelect(type);
 	}
-
+	
 	@Step
-	public void vacationStatusSelect() {
-		myVacationRequests.vacationStatus();
+	public void selectVacationStatus(String type) {
+		myVacationRequests.vacationStatusSelect(type);
 	}
-
+	
+	
 	@Step
 	public void applyButtonClick() {
 		myVacationRequests.applyButton();
