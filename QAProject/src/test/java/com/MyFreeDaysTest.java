@@ -36,11 +36,11 @@ public class MyFreeDaysTest {
 	@Test
 	public void checkIfTheBackButtonIsPresent() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername(Constants.UserName);
-		loginSteps.EnterPassword(Constants.PassWord);
+		loginSteps.enterUsername(Constants.UserName);
+		loginSteps.enterPassword(Constants.PassWord);
 		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
-		myFreeDaysSteps.myFreeDaysButtonClick();
+		myFreeDaysSteps.clickMyFreeDaysButton();
 		myFreeDaysSteps.checkBackBtnIsPresent();
 
 	}

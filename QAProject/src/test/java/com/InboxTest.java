@@ -37,8 +37,8 @@ public class InboxTest {
 	@Test
 	public void checkIfThereIsAnInboxButton() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername(Constants.DMUserName);
-		loginSteps.EnterPassword(Constants.DMPassWord);
+		loginSteps.enterUsername(Constants.DMUserName);
+		loginSteps.enterPassword(Constants.DMPassWord);
 		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
 		inboxSteps.startInboxButton();

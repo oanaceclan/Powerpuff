@@ -13,12 +13,12 @@ public class MyFreeDaysSteps extends ScenarioSteps {
 	MyFreeDaysPage myFreeDaysPage;
 
 	@Step
-	public void myFreeDaysButtonClick() {
-		myFreeDaysPage.myFreeDays();
+	public void clickMyFreeDaysButton() {
+		myFreeDaysPage.clickMyFreeDays();
 	}
 
 	@Step
 	public void checkBackBtnIsPresent() {
-		Assert.assertTrue("My free days text is not present", myFreeDaysPage.isBackButtonPresent());
+		Assert.assertTrue("My free days text is not present", myFreeDaysPage.checkIfBackIsButtonPresent());
 	}
 }

@@ -38,8 +38,8 @@ public class NewVacationRequestSteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void saveRequest() {
-		newVacationReqPage.save();
+	public void clickSaveButton() {
+		newVacationReqPage.clickSaveButton();
 	}
 
 	@Step

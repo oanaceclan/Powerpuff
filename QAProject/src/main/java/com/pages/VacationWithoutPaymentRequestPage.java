@@ -68,11 +68,11 @@ public class VacationWithoutPaymentRequestPage extends PageObject {
 		vacationWithoutPayment.click();
 	}
 
-	public void save() {
+	public void clickSaveButton() {
 		saveButton.click();
 	}
 
-	public boolean isWithdrawnMessagePresent() {
+	public boolean checkIfWithdrawnMessageIsPresent() {
 		return messageAfterWithdrawn.isPresent();
 	}
 
@@ -80,7 +80,7 @@ public class VacationWithoutPaymentRequestPage extends PageObject {
 //		vacationStatus.click();
 //	}
 
-	public void search(String word) {
+	public void searchVacationStatus(String word) {
 		for (int i = 1; i < status.size(); i++) {
 			if (status.get(i).getText().toLowerCase().contains(word.toLowerCase()))
 

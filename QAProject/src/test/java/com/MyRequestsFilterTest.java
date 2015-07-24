@@ -40,16 +40,16 @@ public class MyRequestsFilterTest {
 	@Test
 	public void checkIfMyRequestsFilterWorks() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername(Constants.UserName);
-		loginSteps.EnterPassword(Constants.PassWord);
+		loginSteps.enterUsername(Constants.UserName);
+		loginSteps.enterPassword(Constants.PassWord);
 		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
-		myReqSteps.myRequestsButtonClick();
+		myReqSteps.clickMyRequestsButton();
 		myReqSteps.selectVacationType(VacationType);
 		myReqSteps.selectDaysNumber(DaysNumber);
 		myReqSteps.selectVacationStatus(VacationStatus);
-		myReqSteps.applyButtonClick();
-		myReqSteps.getStatus(Constants.Status2);
+		myReqSteps.clickApplyButton();
+		myReqSteps.getVacationStatus(Constants.Status2);
 		myReqSteps.checkWithdrawnStatusIsPresent();
 
 	}

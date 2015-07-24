@@ -14,43 +14,43 @@ public class MyRequestsFilterSteps extends ScenarioSteps {
 	MyRequestsFilterPage myVacationRequests;
 
 	@Step
-	public void myRequestsButtonClick() {
-		myVacationRequests.myRequestsButton();
+	public void clickMyRequestsButton() {
+		myVacationRequests.clickMyRequestsButton();
 	}
 
 	@Step
 	public void selectVacationType(String type) {
-		myVacationRequests.vacationTypeSelect(type);
+		myVacationRequests.searchVacationStatus(type);
 	}
 
 	@Step
 	public void selectDaysNumber(String type) {
-		myVacationRequests.daysNumberSelect(type);
+		myVacationRequests.selectDaysNumber(type);
 	}
 	
 	@Step
 	public void selectVacationStatus(String type) {
-		myVacationRequests.vacationStatusSelect(type);
+		myVacationRequests.selectVacationStatus(type);
 	}
 	
 	
 	@Step
-	public void applyButtonClick() {
-		myVacationRequests.applyButton();
+	public void clickApplyButton() {
+		myVacationRequests.clickApplyButton();
 	}
 
 	@Step
-	public void getStatus(String word) {
-		myVacationRequests.search(word);
+	public void getVacationStatus(String word) {
+		myVacationRequests.searchVacationStatus(word);
 	}
 
 	@Step
 	public void clickOnCancelButton() {
-		myVacationRequests.cancelBtn();
+		myVacationRequests.clickCancelButton();
 	}
 
 	@Step
 	public void checkWithdrawnStatusIsPresent() {
-		Assert.assertTrue("Withdrawn status is not present!!!", myVacationRequests.isWithdrawnStatusPresent());
+		Assert.assertTrue("Withdrawn status is not present!!!", myVacationRequests.checkIfWithdrawnStatusIsPresent());
 	}
 }

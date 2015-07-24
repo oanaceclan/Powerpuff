@@ -31,7 +31,7 @@ public class LoginPage extends PageObject {
 	@FindBy(css = "[class='sign-out'] a")
 	private WebElementFacade signOutButton;
 
-	public boolean isSignOutButtonPresent() {
+	public boolean checkIfSignOutButtonIsPresent() {
 		return signOutButton.isPresent();
 	}
 
@@ -44,7 +44,7 @@ public class LoginPage extends PageObject {
 		password.type(keyword);
 	}
 
-	public void signIn() {
+	public void clickSignInButton() {
 		signInButton.click();
 	}
 

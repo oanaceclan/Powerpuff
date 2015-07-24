@@ -27,31 +27,31 @@ public class LoginSteps extends ScenarioSteps {
     }
     
     @Step
-    public void EnterUsername(String keyword) {
+    public void enterUsername(String keyword) {
         loginPage.enterUsername(keyword);
     }
 
     @Step
-    public void EnterPassword(String keyword) {
+    public void enterPassword(String keyword) {
         loginPage.enterPassword(keyword);
     }
     
     @Step
     public void signInButtonClick() {
-    	loginPage.signIn();
+    	loginPage.clickSignInButton();
     }
     
     @StepGroup
     public void loginWith(String username, String password) {
     	openLoginPage();
-    	EnterUsername(username);
-    	EnterPassword(password);
+    	enterUsername(username);
+    	enterPassword(password);
     	signInButtonClick();
     }
     
     @Step
     public void checkLoginIsPerformed() {
-    	Assert.assertTrue("SignOut button is not present!!!", loginPage.isSignOutButtonPresent());
+    	Assert.assertTrue("SignOut button is not present!!!", loginPage.checkIfSignOutButtonIsPresent());
     }
     
     @Step

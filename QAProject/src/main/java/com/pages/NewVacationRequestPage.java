@@ -77,7 +77,7 @@ public class NewVacationRequestPage extends PageObject {
 		specialVacationType.click();
 	}
 
-	public void save() {
+	public void clickSaveButton() {
 		saveButton.click();
 	}
 

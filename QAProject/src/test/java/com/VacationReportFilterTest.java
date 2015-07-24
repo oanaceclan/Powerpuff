@@ -41,8 +41,8 @@ public class VacationReportFilterTest {
 	@Test
 	public void checkIfTheFiltersOfVacationReportButtonAndTheExportButtonWorks() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername(Constants.DMUserName);
-		loginSteps.EnterPassword(Constants.DMPassWord);
+		loginSteps.enterUsername(Constants.DMUserName);
+		loginSteps.enterPassword(Constants.DMPassWord);
 		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
 		vacationReportSteps.vacationReportButtonClick();

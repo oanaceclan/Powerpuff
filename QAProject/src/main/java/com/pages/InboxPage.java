@@ -26,8 +26,8 @@ public class InboxPage extends PageObject {
 	}
 	
 	
-	//@FindBy (css="[name='_evovacation_WAR_EvoVacationportlet_allRowIds']")
-	//private WebElementFacade checkAllRows;
+	@FindBy (css="[name='_evovacation_WAR_EvoVacationportlet_allRowIds']")
+	private WebElementFacade checkAllRows;
 	
 	@FindBy (css="[name='_evovacation_WAR_EvoVacationportlet_rowIds']")
 	private WebElementFacade checkFirstRow;
@@ -46,9 +46,9 @@ public class InboxPage extends PageObject {
 		inboxButton.click();
 	}
 	
-	//public void checkAllRows(){
-		//checkAllRows.click();
-	//}
+	public void checkAllRows(){
+		checkAllRows.click();
+	}
 	
 	public void checkFirstRow(){
 		checkFirstRow.click();
@@ -58,8 +58,8 @@ public class InboxPage extends PageObject {
 		approveButton.click();
 	}
 	
-	//public void clickRejectButton(){
-		//rejectButton.click();
-	//}
+	public void clickRejectButton(){
+		rejectButton.click();
+	}
 	
 }

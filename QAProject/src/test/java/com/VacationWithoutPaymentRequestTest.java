@@ -48,8 +48,8 @@ public class VacationWithoutPaymentRequestTest {
 	@Test
 	public void checkIfTheWithdrawnActionForVacationWithoutPaymentRequestIsPerformed() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername(Constants.UserName);
-		loginSteps.EnterPassword(Constants.PassWord);
+		loginSteps.enterUsername(Constants.UserName);
+		loginSteps.enterPassword(Constants.PassWord);
 		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
 		newVacationRequestSteps.newRequestButtonClick();
@@ -57,11 +57,11 @@ public class VacationWithoutPaymentRequestTest {
 		vacationRequestSteps.SelectEndDate();
 		vacationRequestSteps.selectVacationWithoutPaymentType();
 		vacationRequestSteps.saveTheRequest();
-		myReqSteps.myRequestsButtonClick();
+		myReqSteps.clickMyRequestsButton();
 		myReqSteps.selectVacationType(VacationType);
 		myReqSteps.selectDaysNumber(DaysNumber);
 		myReqSteps.selectVacationStatus(VacationStatus);
-		myReqSteps.applyButtonClick();
+		myReqSteps.clickApplyButton();
 		vacationRequestSteps.getTheStatus(Constants.Status);
 		myReqSteps.clickOnCancelButton();
 		vacationRequestSteps.checkWithdrawnActionIsPerformed();

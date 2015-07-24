@@ -44,8 +44,8 @@ public class DatePickerTest {
 	@Test
 	public void chooseTheStartDateAndTheEndDate() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername(Constants.UserName);
-		loginSteps.EnterPassword(Constants.PassWord);
+		loginSteps.enterUsername(Constants.UserName);
+		loginSteps.enterPassword(Constants.PassWord);
 		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
 		newVacationRequestSteps.newRequestButtonClick();

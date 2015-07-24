@@ -38,8 +38,7 @@ public class DatePickerPage extends PageObject {
 				text = data.getText();
 			}
 		}
-		@SuppressWarnings("unused")
-		WebElement tableDay = monthAndYearFromStartDate.findElement(By.cssSelector("table[class='dp_daypicker']"));
+			WebElement tableDay = monthAndYearFromStartDate.findElement(By.cssSelector("table[class='dp_daypicker']"));
 
 		String ziua = Integer.toString(day);
 

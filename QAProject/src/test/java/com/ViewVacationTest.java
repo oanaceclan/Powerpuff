@@ -41,8 +41,8 @@ public class ViewVacationTest {
 	@Test
 	public void checkIfThereIsAViewVacationsButton() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername(Constants.DMUserName);
-		loginSteps.EnterPassword(Constants.DMPassWord);
+		loginSteps.enterUsername(Constants.DMUserName);
+		loginSteps.enterPassword(Constants.DMPassWord);
 		loginSteps.signInButtonClick();
 		vacationMenuSteps.startVacationButton();
 		viewvacationSteps.viewVacationButton();

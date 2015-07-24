@@ -29,22 +29,17 @@ public class VacationWithoutPaymentRequestSteps extends ScenarioSteps {
 
 	@Step
 	public void saveTheRequest() {
-		vacationReqPage.save();
+		vacationReqPage.clickSaveButton();
 	}
-
-//	@Step
-//	public void vacationStatusSelect() {
-//		vacationReqPage.vacationStatus();
-//	}
 
 	@Step
 	public void getTheStatus(String word) {
-		vacationReqPage.search(word);
+		vacationReqPage.searchVacationStatus(word);
 	}
 
 	@Step
 	public void checkWithdrawnActionIsPerformed() {
-		Assert.assertTrue("Withdrawn action was not performed!", vacationReqPage.isWithdrawnMessagePresent());
+		Assert.assertTrue("Withdrawn action was not performed!", vacationReqPage.checkIfWithdrawnMessageIsPresent());
 	}
 
 }

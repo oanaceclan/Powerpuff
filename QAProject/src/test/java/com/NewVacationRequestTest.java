@@ -40,8 +40,8 @@ public class NewVacationRequestTest {
 	@Test
 	public void checkIfTheSpecialVacationRequestWasCreated() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername(Constants.UserName);
-		loginSteps.EnterPassword(Constants.PassWord);
+		loginSteps.enterUsername(Constants.UserName);
+		loginSteps.enterPassword(Constants.PassWord);
 		loginSteps.signInButtonClick();
 		vacationSteps.startVacationButton();
 		newVacationRequestSteps.newRequestButtonClick();
@@ -49,7 +49,7 @@ public class NewVacationRequestTest {
 		newVacationRequestSteps.selectTheEndDate();
 		newVacationRequestSteps.selectTheSpecialVacation();
 		newVacationRequestSteps.selectTheSpecialVacationType();
-		newVacationRequestSteps.saveRequest();
+		newVacationRequestSteps.clickSaveButton();
 		newVacationRequestSteps.checkIfTheChildBirthRequestWasCreated();
 		
 	}

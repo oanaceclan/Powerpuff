@@ -13,11 +13,11 @@ public class MyFreeDaysPage extends PageObject {
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_TabsBack")
 	private WebElementFacade backButton;
 
-	public void myFreeDays() {
+	public void clickMyFreeDays() {
 		myFreeDaysButton.click();
 	}
 
-	public boolean isBackButtonPresent() {
+	public boolean checkIfBackIsButtonPresent() {
 		return backButton.isPresent();
 	}
 

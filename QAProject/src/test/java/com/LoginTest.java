@@ -32,8 +32,8 @@ public class LoginTest {
 	@Test
 	public void verifyLoginWithValidCredentials() {
 		loginSteps.openLoginPage();
-		loginSteps.EnterUsername(Constants.DMUserName);
-		loginSteps.EnterPassword(Constants.DMPassWord);
+		loginSteps.enterUsername(Constants.DMUserName);
+		loginSteps.enterPassword(Constants.DMPassWord);
 		loginSteps.signInButtonClick();
 		loginSteps.checkLoginIsPerformed();
 	}
